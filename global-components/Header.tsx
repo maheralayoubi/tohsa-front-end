@@ -3,13 +3,13 @@ import Image from "next/image";
 import { useState } from "react";
 
 const Header = () => {
-  const [navLinks] = useState<String[]>([
+  const [navLinks] = useState<string[]>([
     "About",
     "Discovery",
     "Access",
     "Learn",
   ]);
-  const [actionLinks] = useState<String[]>(["Contact Us", "Help"]);
+  const [actionLinks] = useState<string[]>(["Contact Us", "Help"]);
   const [displayNav, setDisplayNav] = useState<boolean>(false);
 
   return (
@@ -62,14 +62,12 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] ${
-          displayNav ? "block" : "hidden"
-        }`}
+        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] ${displayNav ? "block" : "hidden"
+          }`}
       ></div>
       <div
-        className={`md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
-          displayNav ? "translate-x-0" : "translate-x-[-100%]"
-        }`}
+        className={`md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
       >
         <div className="block w-100 relative h-[24px]">
           <Image
