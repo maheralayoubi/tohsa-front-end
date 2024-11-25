@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 
 //sections
 import Hero from "./sections/Hero";
@@ -19,7 +20,7 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-start justify-between">
       <SideBar displaySidebar={displaySidebar} />
       <div className="container text-center">
         <Hero />
@@ -29,4 +30,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default Index;
+export default dynamic(() => Promise.resolve(Index), { ssr: false });

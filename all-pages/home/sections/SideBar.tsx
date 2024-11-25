@@ -8,7 +8,7 @@ interface ISideBarProps {
 const SideBar = ({ displaySidebar }: ISideBarProps) => {
   // Only render the sidebar when displayNav is false
   return displaySidebar === true ? (
-    <div className="sidebar pt-[20px] px-[20px] font-poppins h-[100%]">
+    <div className="sidebar pt-[20px] px-[20px] font-poppins h-[100%] max-w-[15%]">
       <ul className="pt-[20px] pl-[20px] space-y-5">
         {data.map((item, index) => (
           <li key={index} className="font-bold text-[20px]">
@@ -17,7 +17,7 @@ const SideBar = ({ displaySidebar }: ISideBarProps) => {
               {item.items.map((subItem, subIndex) => (
                 <li
                   key={subIndex}
-                  className="font-normal text-[16px] flex items-center space-x-2 w-[100%] cursor-pointer"
+                  className="font-normal text-[80%] flex items-center space-x-2 w-[100%] cursor-pointer"
                 >
                   <Image
                     src="/images/setting.svg"

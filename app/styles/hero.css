@@ -1,0 +1,32 @@
+.hox {
+  width: 110px;
+  height: 75px;
+  background-color: #A40182;
+  position: relative;
+  color: white;
+  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hox::before,
+.hox::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  z-index: -1;
+}
+
+.hox::before {
+  top: -49px;
+  border-bottom: 50px solid #A40182;
+}
+
+.hox::after {
+  bottom: -49px;
+  border-top: 50px solid #A40182;
+}
