@@ -61,3 +61,10 @@
     transform: rotateY(-180deg);
   }
 }
+
+table {
+  border-collapse: collapse;
+  border-radius: 5px;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px #666;
+}
