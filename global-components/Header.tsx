@@ -89,12 +89,12 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] ${
+        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] z-40 ${
           displayNav ? "block" : "hidden"
         }`}
       ></div>
       <div
-        className={`md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
+        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
           displayNav ? "translate-x-0" : "translate-x-[-100%]"
         }`}
       >
