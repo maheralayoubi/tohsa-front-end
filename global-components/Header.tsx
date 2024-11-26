@@ -3,6 +3,7 @@ import Image from "next/image";
 import data from "../all-pages/home/data/sidebarData.json";
 import { useState, useRef } from "react";
 import "../app/styles/header.css";
+import dynamic from "next/dynamic";
 
 const Header = () => {
   const [navLinks] = useState<string[]>([
@@ -205,4 +206,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default dynamic(() => Promise.resolve(Header), { ssr: false });

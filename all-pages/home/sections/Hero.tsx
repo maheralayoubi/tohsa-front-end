@@ -1,12 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import "@/app/styles/hero.css";
 import HexagonWithLetter from "./HexagonWithLetter";
 
 const Hero = () => {
   return (
     <div>
-      <div className="relative z-[-1]">
+      <div className="relative">
         {/* Background Image */}
         <Image
           src="/images/hero_photo.png"
@@ -23,7 +22,7 @@ const Hero = () => {
         <div className="absolute block bottom-0 left-[50%] translate-x-[-50%] z-40 h-[65%] lg:h-[45%] w-full">
           <div className="flex justify-center items-center space-x-[8px] md:space-x-4 sm:space-x-2">
             {"TOHSA".split("").map((letter, index) => (
-              <HexagonWithLetter letter={letter} />
+              <HexagonWithLetter key={index} letter={letter} />
             ))}
           </div>
 
