@@ -1,19 +1,22 @@
 import React from "react";
 
 const HexagonWithLetter = ({ letter }: { letter: string }) => {
-  // Calculate hexagon points for a regular hexagon
-  const size = 60;
-  const points = [];
-  for (let i = 0; i < 6; i++) {
-    const angle = ((60 * i - 30) * Math.PI) / 180;
-    const x = size * Math.cos(angle);
-    const y = size * Math.sin(angle);
-    points.push(`${x},${y}`);
-  }
+  // Predefined points for a regular hexagon
+  const points = [
+    "51.9615,-30",
+    "51.9615,30",
+    "0,60",
+    "-51.9615,30",
+    "-51.9615,-30",
+    "0,-60",
+  ];
 
   return (
-    <div className='w-fit block'>
-      <svg viewBox="-70 -70 125 125" className="w-[60px] h-16 lg:w-[110px] lg:h-36">
+    <div className="w-fit block">
+      <svg
+        viewBox="-60 -60 120 120"
+        className="w-[60px] h-16 lg:w-[105px] lg:h-[120px]"
+      >
         <defs>
           <style type="text/css">
             {`
@@ -22,14 +25,12 @@ const HexagonWithLetter = ({ letter }: { letter: string }) => {
                 stroke: #A40182;
                 stroke-width: 2;
                 transition: fill 0.3s ease;
-                width:100%;
               }
               .hexagon:hover {
                 fill: transparent;
               }
               .letter {
                 fill: white;
-                font-size: 48px;
                 font-weight: bold;
                 transition: fill 0.3s ease;
               }
@@ -41,14 +42,15 @@ const HexagonWithLetter = ({ letter }: { letter: string }) => {
         </defs>
 
         {/* Hexagon */}
-        <polygon points={points.join(" ")} className="hexagon w-[100%] cursor-pointer" />
+        <polygon points={points.join(" ")} className="hexagon cursor-pointer" />
 
+        {/* Letter */}
         <text
           x="0"
-          y="8"
+          y="10"
           textAnchor="middle"
           dominantBaseline="middle"
-          className="letter"
+          className="letter text-[40px] lg:text-[64px]"
           style={{ pointerEvents: "none" }}
         >
           {letter}
