@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Resources",
+    "items": [
+      {
+        "name": "Glycogens"
+      },
+      {
+        "name": "Glycoproteins"
+      },
+      {
+        "name": "Lectins"
+      },
+      {
+        "name": "Glycans"
+      },
+      {
+        "name": "Pathways"
+      },
+      {
+        "name": "Diseases"
+      }
+    ]
+  },
+  {
+    "title": "Standards",
+    "items": [
+      {
+        "name": "Ontologies"
+      },
+      {
+        "name": "Notations"
+      }
+    ]
+  }
+]
