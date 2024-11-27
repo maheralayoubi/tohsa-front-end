@@ -21,7 +21,7 @@ const Projects = ({}: IProjectsProps) => {
         </h2>
         <div className="flex flex-col space-y-[20px] my-[20px]">
           {data.map((project, index) => (
-            <div className="flex space-x-[20px] justify-between">
+            <div key={index} className="flex space-x-[20px] justify-between">
               <Image
                 src={`/images/${project.image}.png`}
                 alt={project.title}

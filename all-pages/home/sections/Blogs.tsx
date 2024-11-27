@@ -4,26 +4,26 @@ interface IBlogsProps {}
 
 const Blogs = ({}: IBlogsProps) => {
   return (
-    <div className="bg-[#efebf6] bg-cover bg-center px-[20px] py-[40px] md:py-[128px] md:px-[64px] relative overflow-hidden">
-      <div className="flex flex-wrap md:flex-nowrap space-x-[20px] md:space-y-0 md:space-x-[40px] w-[100%]">
+    <div className="bg-[#efebf6] bg-cover bg-center px-[20px] py-[40px] lg:py-[128px] lg:px-[32px] relative overflow-hidden">
+      <div className="flex flex-wrap lg:flex-nowrap space-y-[20px] lg:space-y-0 lg:space-x-[20px] w-[100%]">
         {data.map((blog, index) => (
           <div
             key={index}
-            className="w-[100%] md:w-[35%] bg-white p-[20px] rounded-[8px] z-10"
+            className="w-[100%] lg:w-[35%] bg-white p-[8px] lg:p-[20px] rounded-[8px] z-10"
           >
-            <div className="rounded-[2px] w-[310px] h-[206px] overflow-hidden">
+            <div className="rounded-[2px] w-full h-[206px] overflow-hidden">
               <Image
                 src={`/images/${blog.image}.png`}
                 alt={blog.title}
                 width={500}
                 height={500}
-                className="rounded-[2px]"
+                className="rounded-[2px] w-full h-full"
               />
             </div>
-            <p className="font-poppins font-bold text-[24px] text-[#484848] py-[20px] min-h-[112px]">
+            <p className="font-poppins font-bold text-[16px] lg:text-[24px] text-[#484848] my-[8px] lg:my-[20px] lg:min-h-[112px]">
               {blog.title}
             </p>
-            <p className="font-poppins text-[#626262] text-[16px] mb-[20px]">
+            <p className="font-poppins text-[#626262] text-[12px] lg:text-[16px] mb-[8px] lg:mb-[20px]">
               {blog.paragraph}
             </p>
             <div className="font-poppins text-[16px] w-full flex justify-center">

@@ -33,7 +33,7 @@ const Index: React.FC = () => {
   return (
     <div className="flex items-start justify-between">
       <SideBar displaySidebar={displaySidebar} />
-      <div className="container text-center">
+      <div className="flex-1 text-center max-w-[75%]">
         <Hero />
         <Blogs />
         <Projects />
