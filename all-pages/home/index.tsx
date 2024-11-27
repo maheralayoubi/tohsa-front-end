@@ -7,6 +7,7 @@ import Hero from "./sections/Hero";
 import SideBar from "./sections/SideBar";
 import News from "./sections/News";
 import Blogs from "./sections/Blogs";
+import Projects from "./sections/Projects";
 
 const Index: React.FC = () => {
   const [displaySidebar, setDisplaySidebar] = useState<boolean>(false);
@@ -35,6 +36,7 @@ const Index: React.FC = () => {
       <div className="container text-center">
         <Hero />
         <Blogs />
+        <Projects />
       </div>
       <News />
     </div>
