@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import Hero from "./sections/Hero";
 import SideBar from "./sections/SideBar";
 import News from "./sections/News";
+import Blogs from "./sections/Blogs";
 
 const Index: React.FC = () => {
   const [displaySidebar, setDisplaySidebar] = useState<boolean>(false);
@@ -33,6 +34,7 @@ const Index: React.FC = () => {
       <SideBar displaySidebar={displaySidebar} />
       <div className="container text-center">
         <Hero />
+        <Blogs />
       </div>
       <News />
     </div>

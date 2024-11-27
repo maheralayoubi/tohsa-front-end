@@ -22,7 +22,9 @@ const Hero = () => {
         <div className="flex justify-center items-center space-x-2 font-poppins font-bold">
           {"TOHSA".split("").map((letter, index) => (
             // <HexagonWithLetter key={index} letter={letter} />
-            <div className="hexagon">{letter}</div>
+            <div key={index} className="hexagon">
+              {letter}
+            </div>
           ))}
         </div>
 
