@@ -6,6 +6,8 @@ import dynamic from "next/dynamic";
 import Hero from "./sections/Hero";
 import SideBar from "./sections/SideBar";
 import News from "./sections/News";
+import Blogs from "./sections/Blogs";
+import Projects from "./sections/Projects";
 
 const Index: React.FC = () => {
   const [displaySidebar, setDisplaySidebar] = useState<boolean>(false);
@@ -31,8 +33,10 @@ const Index: React.FC = () => {
   return (
     <div className="flex items-start justify-between">
       <SideBar displaySidebar={displaySidebar} />
-      <div className="container text-center">
+      <div className="flex-1 text-center max-w-[75%]">
         <Hero />
+        <Blogs />
+        <Projects />
       </div>
       <News />
     </div>
