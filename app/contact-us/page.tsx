@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-
-import Content from "@/all-pages/content"
-
+import ContactUs from "@/all-pages/contact-us"
 
 export const metadata: Metadata = {
     title: "Tohsa",
 };
 
-export default function Page() {
+
+export default async function ContactUsPage() {
+
     return (
         <>
-            <Content />
+            <ContactUs />
         </>
-    )
+    );
 }
