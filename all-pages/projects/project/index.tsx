@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
-import projectsData from "./data/projects.json"
+import projectsData from "@/DB/projects.json"
 
 
 interface IProjectsPage {

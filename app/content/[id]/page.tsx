@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Content from "@/all-pages/content";
+import Footer from "@/global-components/Footer";
 
 export const metadata: Metadata = {
     title: "Tohsa",
@@ -19,6 +20,7 @@ export default async function ContentPage({ params }: IContentPage) {
     return (
         <>
             <Content id={id} />
+            <Footer />
         </>
     );
 }

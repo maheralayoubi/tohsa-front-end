@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
-import newsData from "./data/news.json"
+import newsData from "@/DB/news.json"
 
 interface NewsPage {
     id: string;
@@ -53,13 +53,13 @@ const Index: React.FC<NewsPage> = ({ id }) => {
                                 <ul className="list-disc px-5">
                                     {
                                         data?.program.map((item1, index) =>
-                                            <>
+                                            <div key={index}>
                                                 <li key={index}>{item1.content}</li>
                                                 <ul className="list-disc px-5">
                                                     {
                                                         item1.list.map((item2, index) =>
-                                                            <>
-                                                                <li key={index}>{item2.content}</li>
+                                                            <div key={index}>
+                                                                <li>{item2.content}</li>
                                                                 <ul className="list-disc px-5">
                                                                     {
                                                                         item2.list.map((item3, index) =>
@@ -67,10 +67,10 @@ const Index: React.FC<NewsPage> = ({ id }) => {
                                                                         )
                                                                     }
                                                                 </ul>
-                                                            </>
+                                                            </div>
                                                         )}
                                                 </ul>
-                                            </>
+                                            </div>
                                         )}
                                 </ul>
                             </td>

@@ -91,3 +91,21 @@
     top: -17px;
   }
 }
+
+@media (max-width: 1400px) {
+  .hexagon {
+    width: 60px;
+    height: 40px;
+    font-size: 30px;
+  }
+  .hexagon:before {
+    width: 32px;
+    height: 33px;
+    bottom: -17px;
+  }
+  .hexagon:after {
+    width: 32px;
+    height: 33px;
+    top: -17px;
+  }
+}
