@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import ContactUs from "@/all-pages/contact-us"
-import Footer from "@/global-components/Footer";
 
+// pages
+import ContactUs from "@/all-pages/contact-us"
+
+// metadata
 export const metadata: Metadata = {
-    title: "Tohsa",
+    title: "Contact Us",
+    description: "contact us description"
 };
 
-
 export default async function ContactUsPage() {
-
-    return (
-        <>
-            <ContactUs />
-            <Footer />
-        </>
-    );
+    return <ContactUs />;
 }

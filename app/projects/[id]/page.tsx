@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+
+// page
 import Project from '@/all-pages/projects/project'
-import Footer from "@/global-components/Footer";
 
-
+// metadata
 export const metadata: Metadata = {
-    title: "Tohsa",
+    title: "project",
+    description: "project description"
 };
 
 interface IProjectsPage {
@@ -13,15 +15,7 @@ interface IProjectsPage {
     }>;
 }
 
-
 export default async function UpdatesPage({ params }: IProjectsPage) {
-
     const { id } = await params
-
-    return (
-        <>
-            <Project id={id} />
-            <Footer />
-        </>
-    );
+    return <Project id={id} />;
 }

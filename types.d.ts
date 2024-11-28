@@ -15,3 +15,20 @@ type ProgramIndex = {
     content: string,
     list?: ProgramIndex[]
 }
+
+type Blog = {
+    id: string
+    title: string,
+    image: string,
+    content: string
+}
+
+type Project = {
+    id: string
+    title: string,
+    image: string,
+    about: string,
+    subImage: string,
+    subTitle: string,
+    contentEnd: string,
+}

@@ -6,6 +6,8 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
+/* start loading style */
+
 .loaderPage {
   width: 200px;
   height: 140px;
@@ -37,6 +39,7 @@
     105px 90px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
 }
+
 .loaderPage:after {
   content: "";
   position: absolute;
@@ -62,12 +65,16 @@
   }
 }
 
+/* end loading style */
+
 table {
   border-collapse: collapse;
   border-radius: 5px;
   border-style: hidden;
   box-shadow: 0 0 0 1px #666;
 }
+
+/* slider */
 .mySwiper {
   padding: 0px 60px !important;
 }
@@ -75,7 +82,6 @@ table {
 .swiper {
   width: 100%;
   height: 100%;
-  /* max-width: 1260px; */
 }
 
 .swiper-slide {
@@ -92,6 +98,7 @@ table {
     padding: 0px 0px !important;
     padding-right: 100px !important;
   }
+
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
