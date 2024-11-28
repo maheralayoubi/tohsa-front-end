@@ -13,19 +13,19 @@ const contentData: IContentData[] = [
     {
         id: "1",
         title: "Precise Human Glycan Catalogue",
-        image: "/images_db/content1.png",
+        image: "content1.png",
         content: "Reveals information on sugar chains in the human body.\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.\n Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
     },
     {
         id: "2",
         title: "Human Disease-related Glycan Data",
-        image: "/images_db/content2.png",
+        image: "content2.png",
         content: "Displays the relationship between diseases and sugar chains. \n Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. \n Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
     },
     {
         id: "3",
         title: "Glycan Biosynthesis Atlas",
-        image: "/images_db/content3.png",
+        image: "content3.png",
         content: "Explains how sugar chains are synthesized in the body.\n Estie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. \n Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
     }
 ]
