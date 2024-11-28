@@ -12,7 +12,7 @@ interface SidebarItem {
 
 const SideBar = ({ displaySidebar }: ISideBarProps) => {
   return displaySidebar ? (
-    <div className="sidebar h-full max-w-[15%] p-[1%] font-poppins">
+    <div className="sidebar h-full hidden lg:block w-[15%] max-w-[15%] p-[1%] font-poppins sticky top-20">
       <ul className="pl-[1%] space-y-5">
         {data.map((item: SidebarItem, index) => (
           <li key={index} className="font-bold text-lg">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import News from "@/all-pages/allNews/oneNews";
+import Footer from "@/global-components/Footer";
 
 export const metadata: Metadata = {
     title: "Tohsa",
@@ -19,6 +20,7 @@ export default async function UpdatesPage({ params }: IOneNewsPage) {
     return (
         <>
             <News id={id} />
+            <Footer />
         </>
     );
 }

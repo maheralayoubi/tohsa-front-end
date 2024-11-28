@@ -1,35 +1,36 @@
 import Image from "next/image";
-import data from "../data/blogsData.json";
-interface IBlogsProps {}
+import blogsData from '@/DB/blogs.json'
+import Link from "next/link";
 
-const Blogs = ({}: IBlogsProps) => {
+
+const Blogs = () => {
   return (
-    <div className="bg-[#efebf6] bg-cover bg-center px-[20px] py-[40px] lg:py-[128px] lg:px-[32px] relative overflow-hidden">
-      <div className="flex flex-wrap lg:flex-nowrap space-y-[20px] lg:space-y-0 lg:space-x-[20px] w-[100%]">
-        {data.map((blog, index) => (
+    <div className="bg-[#efebf6] bg-cover bg-center px-[20px]  py-[40px] lg:py-[128px] lg:px-[64px] relative overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  w-[100%] gap-10">
+        {blogsData.map((blog, index) => (
           <div
             key={index}
-            className="w-[100%] lg:w-[35%] bg-white p-[8px] lg:p-[20px] rounded-[8px] z-10"
+            className=" bg-white p-[8px] lg:p-[20px] rounded-[8px] z-10"
           >
             <div className="rounded-[2px] w-full h-[206px] overflow-hidden">
               <Image
-                src={`/images/${blog.image}.png`}
-                alt={blog.title}
+                src={blog?.image}
+                alt={blog?.title}
                 width={500}
                 height={500}
-                className="rounded-[2px] w-full h-full"
+                className="rounded-[2px] w-full h-full object-cover"
               />
             </div>
-            <p className="font-poppins font-bold text-[16px] lg:text-[24px] text-[#484848] my-[8px] lg:my-[20px] lg:min-h-[112px]">
-              {blog.title}
+            <p className="font-poppins font-bold text-[16px] lg:text-[24px] text-[#484848] my-[8px] lg:my-[20px] lg:min-h-[72px]">
+              {blog?.title}
             </p>
-            <p className="font-poppins text-[#626262] text-[12px] lg:text-[16px] mb-[8px] lg:mb-[20px]">
-              {blog.paragraph}
+            <p className="font-poppins text-[#626262] text-[12px] lg:text-[16px] mb-[8px] lg:mb-[20px] line-clamp-2 ">
+              {blog?.content}
             </p>
             <div className="font-poppins text-[16px] w-full flex justify-center">
-              <p className=" text-[#57369E] cursor-pointer hover:text-blue-500 w-fit text-center">
+              <Link href={`/content/${blog?.id}`} className=" text-[#57369E] cursor-pointer hover:text-blue-500 w-fit text-center">
                 See More
-              </p>
+              </Link>
             </div>
           </div>
         ))}
