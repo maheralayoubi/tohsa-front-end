@@ -34,7 +34,7 @@ const Footer = () => {
           <Link href="/">TOOLS</Link>
           <Link href="/">STANDARDS</Link>
         </div>
-        <a href="#top">
+        <a href="#top" className="h-12">
           <button className=" rounded-sm text-white px-8 py-4 bg-[#57369E] flex items-center justify-center gap-1 sm:max-w-[187px] sm:max-h-[48px] hover:bg-[#00A7D3] transition">
             <span className="font-semibold">
               Back to Top
