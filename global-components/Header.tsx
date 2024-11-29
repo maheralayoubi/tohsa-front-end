@@ -40,7 +40,7 @@ const Header = () => {
   // };
 
   return (
-    <header id="top" className="px-[16px] py-[8px] md:px-[40px] md:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
+    <header className="px-[16px] py-[8px] md:px-[40px] md:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
       <div className="flex justify-between items-center">
         {/* Logo and Navigation */}
         <div className="flex items-center space-x-10">
