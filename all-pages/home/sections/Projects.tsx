@@ -31,7 +31,7 @@ const Projects = () => {
   const [imgSrc, setImgSrc] = useState("/images/arrow-right-colored.svg");
   return (
     <div className="flex flex-wrap xl:flex-nowrap px-[20px] lg:px-[64px] py-[40px] lg:py-[128px] xl:space-x-[40px] gap-5">
-      <div className="relative overflow-hidden w-full xl:w-[546px] h-[210px] lg:h-[570px] rounded-lg flex">
+      <div className="relative overflow-hidden w-full h-[210px] lg:h-[570px] rounded-lg flex">
         <Image
           src="/images/nn5.png"
           alt="nn5"
