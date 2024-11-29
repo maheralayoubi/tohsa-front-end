@@ -4,7 +4,7 @@ import "@/app/styles/hexagon.css";
 
 const Hero = () => {
   return (
-    <div className="relative md:pt-0">
+    <div className="relative md:pt-0" id="top">
       {/* Background Image */}
       <Image
         src="/images/hero_photo.png"

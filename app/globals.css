@@ -6,6 +6,10 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .loaderPage {
   width: 200px;
   height: 140px;
