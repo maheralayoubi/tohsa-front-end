@@ -23,24 +23,24 @@ const Header = () => {
     setOpenSections(openSections === index ? null : index);
   };
 
-  // Scroll up/down functions
-  const scrollUp = () => {
-    if (scrollableContainerRef.current) {
-      scrollableContainerRef.current.scrollBy({
-        top: -100,
-        behavior: "smooth",
-      });
-    }
-  };
+  // // Scroll up/down functions
+  // const scrollUp = () => {
+  //   if (scrollableContainerRef.current) {
+  //     scrollableContainerRef.current.scrollBy({
+  //       top: -100,
+  //       behavior: "smooth",
+  //     });
+  //   }
+  // };
 
-  const scrollDown = () => {
-    if (scrollableContainerRef.current) {
-      scrollableContainerRef.current.scrollBy({ top: 100, behavior: "smooth" });
-    }
-  };
+  // const scrollDown = () => {
+  //   if (scrollableContainerRef.current) {
+  //     scrollableContainerRef.current.scrollBy({ top: 100, behavior: "smooth" });
+  //   }
+  // };
 
   return (
-    <header className="px-[16px] py-[8px] md:px-[40px] md:py-[20px] overflow-auto font-poppins">
+    <header className="px-[16px] py-[8px] md:px-[40px] md:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
       <div className="flex justify-between items-center">
         {/* Logo and Navigation */}
         <div className="flex items-center space-x-10">
@@ -89,14 +89,12 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] z-40 ${
-          displayNav ? "block" : "hidden"
-        }`}
+        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
+          }`}
       ></div>
       <div
-        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
-          displayNav ? "translate-x-0" : "translate-x-[-100%]"
-        }`}
+        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
       >
         <div className="block w-100 relative h-[24px]">
           <Image
@@ -152,16 +150,14 @@ const Header = () => {
                     alt="toggle arrow"
                     width={16}
                     height={16}
-                    className={`transition-transform ${
-                      openSections === index ? "rotate-90" : "rotate-0"
-                    }`}
+                    className={`transition-transform ${openSections === index ? "rotate-90" : "rotate-0"
+                      }`}
                   />
                 </div>
                 {/* Collapsible Content */}
                 <ul
-                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${
-                    openSections === index ? "max-h-[500px]" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${openSections === index ? "max-h-[500px]" : "max-h-0"
+                    }`}
                 >
                   {item.items.map((subItem, subIndex) => (
                     <li

@@ -3,7 +3,7 @@ import React from "react";
 
 const News = () => {
   return (
-    <div className="hidden md:block pt-[20px] w-[15%] px-[20px] font-poppins font-bold text-[20px]">
+    <div className="hidden lg:block pt-[20px] w-[20%] max-w-[20%] px-[20px] font-poppins font-bold text-[20px] sticky top-20">
       <div className="flex justify-between">
         <p>News</p>
         <div className="flex justify-between items-center space-x-[16px]">

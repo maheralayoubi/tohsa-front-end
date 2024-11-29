@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Project from '@/all-pages/projects/project'
+import Footer from "@/global-components/Footer";
 
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default async function UpdatesPage({ params }: IProjectsPage) {
     return (
         <>
             <Project id={id} />
+            <Footer />
         </>
     );
 }

@@ -9,7 +9,7 @@
   cursor: pointer;
   z-index: 1;
   background-color: #a40182;
-  border: 5px solid #a40182;
+  border: 3px solid #a40182;
   color: white;
   border-top: none;
   border-bottom: none;
@@ -19,11 +19,11 @@
   content: "";
   width: 60px;
   height: 60px;
-  border: 5px solid #a40182;
+  border: 3px solid #a40182;
   background-color: #a40182;
   position: absolute;
-  top: -43%;
-  left: 20%;
+  top: -42%;
+  left: 21%;
   rotate: -45deg;
   transform: skew(16deg, 16deg);
   border-bottom: none;
@@ -35,11 +35,11 @@
   content: "";
   width: 60px;
   height: 60px;
-  border: 5px solid #a40182;
+  border: 3px solid #a40182;
   background-color: #a40182;
   position: absolute;
-  bottom: -43%;
-  left: 20%;
+  bottom: -42%;
+  left: 21%;
   rotate: -45deg;
   border-top: none;
   border-right: none;
@@ -75,6 +75,24 @@
   }
 }
 @media (max-width: 992px) {
+  .hexagon {
+    width: 60px;
+    height: 40px;
+    font-size: 30px;
+  }
+  .hexagon:before {
+    width: 32px;
+    height: 33px;
+    bottom: -17px;
+  }
+  .hexagon:after {
+    width: 32px;
+    height: 33px;
+    top: -17px;
+  }
+}
+
+@media (max-width: 1400px) {
   .hexagon {
     width: 60px;
     height: 40px;
