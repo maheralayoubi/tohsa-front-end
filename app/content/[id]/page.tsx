@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import Content from "@/all-pages/content";
-import Footer from "@/global-components/Footer";
 
+// pages
+import Content from "@/all-pages/content";
+
+// metadata
 export const metadata: Metadata = {
-    title: "Tohsa",
+    title: "Content",
+    description: "content description"
 };
 
 interface IContentPage {
@@ -12,15 +15,7 @@ interface IContentPage {
     }>;
 }
 
-
 export default async function ContentPage({ params }: IContentPage) {
-
     const { id } = await params
-
-    return (
-        <>
-            <Content id={id} />
-            <Footer />
-        </>
-    );
+    return <Content id={id} />;
 }

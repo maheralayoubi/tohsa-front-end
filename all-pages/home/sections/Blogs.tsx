@@ -6,18 +6,15 @@ const Blog = ({
   image,
   title,
   content,
-  index,
   id,
 }: {
   image: string;
   title: string;
   content: string;
-  index: number;
   id: string;
 }) => {
   return (
     <div
-      key={index}
       className="bg-white p-[8px] lg:p-[20px] rounded-[8px] z-10"
     >
       <div className="rounded-[2px] w-full h-[206px] overflow-hidden">
@@ -53,7 +50,7 @@ const Blogs = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 w-[100%] gap-10">
         {blogsData.map((blog, index) => (
           <Blog
-            index={index}
+            key={index}
             image={blog?.image}
             title={blog?.title}
             content={blog?.content}

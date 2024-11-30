@@ -8,7 +8,7 @@ const Index: React.FC = () => {
     return (
         <main>
             <section className="flex items-center justify-center h-[calc(100vh-80px)] text-5xl">
-                Contact Us
+                About
             </section>
             <Footer />
         </main>
