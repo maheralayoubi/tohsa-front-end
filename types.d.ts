@@ -32,3 +32,9 @@ type Project = {
     subTitle: string,
     contentEnd: string,
 }
+
+type Ontotologies = {
+    id: string
+    title: string,
+    content: string,
+}
