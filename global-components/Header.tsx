@@ -4,6 +4,7 @@ import data from "../all-pages/home/data/sidebarData.json";
 import { useState, useRef } from "react";
 import "../app/styles/header.css";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const Header = () => {
   const [navLinks] = useState<string[]>([
@@ -54,22 +55,26 @@ const Header = () => {
               className="cursor-pointer md:hidden"
               onClick={() => setDisplayNav(!displayNav)}
             />
-            <Image
-              src="/images/Logo.svg"
-              alt="logo"
-              width={220}
-              height={64}
-              className="w-[139px] h-[40px]"
-            />
+            <Link href="/">
+              <Image
+                src="/images/Logo.svg"
+                alt="logo"
+                width={220}
+                height={64}
+                className="w-[139px] h-[40px]"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex items-center space-x-5 font-poppins text-[16px]">
               {navLinks.map((link, index) => (
-                <li key={index} className="cursor-pointer">
-                  {link}
-                </li>
+                <Link href={link.toLowerCase()}>
+                  <li key={index} className="cursor-pointer">
+                    {link}
+                  </li>
+                </Link>
               ))}
             </ul>
           </nav>
@@ -79,9 +84,11 @@ const Header = () => {
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-5 font-poppins text-[16px]">
             {actionLinks.map((link, index) => (
-              <li key={index} className="cursor-pointer">
-                {link}
-              </li>
+              <Link href={link.toLowerCase()}>
+                <li key={index} className="cursor-pointer">
+                  {link}
+                </li>
+              </Link>
             ))}
           </ul>
         </nav>
@@ -89,12 +96,15 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
-          }`}
+        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${
+          displayNav ? "block" : "hidden"
+        }`}
+        onClick={() => setDisplayNav(!displayNav)}
       ></div>
       <div
-        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
-          }`}
+        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
+          displayNav ? "translate-x-0" : "translate-x-[-100%]"
+        }`}
       >
         <div className="block w-100 relative h-[24px]">
           <Image
@@ -150,14 +160,16 @@ const Header = () => {
                     alt="toggle arrow"
                     width={16}
                     height={16}
-                    className={`transition-transform ${openSections === index ? "rotate-90" : "rotate-0"
-                      }`}
+                    className={`transition-transform ${
+                      openSections === index ? "rotate-90" : "rotate-0"
+                    }`}
                   />
                 </div>
                 {/* Collapsible Content */}
                 <ul
-                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${openSections === index ? "max-h-[500px]" : "max-h-0"
-                    }`}
+                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${
+                    openSections === index ? "max-h-[500px]" : "max-h-0"
+                  }`}
                 >
                   {item.items.map((subItem, subIndex) => (
                     <li
