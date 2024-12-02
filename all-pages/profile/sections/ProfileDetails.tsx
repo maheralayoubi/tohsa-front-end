@@ -16,11 +16,12 @@ const ProfileDetails: React.FC<IProfileDetails> = ({ data }) => {
                 </div>
                 <div className="flex-1 lg:space-y-5 space-y-2">
                     <h1 className="text-xl lg:text-[40px] font-bold">{data?.userName}</h1>
-                    <span className="text-[#484848] block">{data?.work}</span>
-                    <p className="text-[#484848]">{data?.shortDiscription}</p>
+                    <span className="text-[#484848] block ">{data?.work}</span>
+                    <p className="text-[#484848] ">{data?.shortDiscription}</p>
                 </div>
             </div>
 
+            {/* Biography */}
             <div className=" space-y-2 lg:space-y-5">
                 <h2 className="font-bold text-base lg:text-4xl">Biography</h2>
                 {data.biography?.split("\n").map((item, index) =>
@@ -28,18 +29,19 @@ const ProfileDetails: React.FC<IProfileDetails> = ({ data }) => {
                 )}
             </div>
 
+            {/* Contact Details */}
             <div className="space-y-2 lg:space-y-5">
                 <h2 className="font-bold text-base lg:text-4xl">Contact Details</h2>
-                <Link href={`mailto:${data?.contact?.email}`} className="text-[#00A7D3]">{data?.contact?.email}</Link>
+                <Link href={`mailto:${data?.contact?.email}`} className="text-[#00A7D3] block">{data?.contact?.email}</Link>
                 <div className="flex items-center justify-start gap-5">
                     <Link href={data?.contact?.twitter}>
-                        <Image src="/images/x.svg" alt="" width={24} height={24} />
+                        <Image src="/images/x.svg" alt="x" width={24} height={24} />
                     </Link>
                     <Link href={data?.contact?.facebook}>
-                        <Image src="/images/facebook.svg" alt="" width={24} height={24} />
+                        <Image src="/images/facebook.svg" alt="facebook" width={24} height={24} />
                     </Link>
                     <Link href={data?.contact?.linkedin}>
-                        <Image src="/images/linkedin.svg" alt="" width={24} height={24} />
+                        <Image src="/images/linkedin.svg" alt="linkedin" width={24} height={24} />
                     </Link>
                 </div>
             </div>
