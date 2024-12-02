@@ -4,6 +4,7 @@ import data from "../all-pages/home/data/sidebarData.json";
 import { useState, useRef } from "react";
 import "../app/styles/header.css";
 import dynamic from "next/dynamic";
+import SearchBtn from "./SearchBtn";
 
 const Header = () => {
   const [navLinks] = useState<string[]>([
@@ -74,7 +75,7 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-
+        <SearchBtn />
         {/* Action Links */}
         <nav className="hidden md:block">
           <ul className="flex items-center space-x-5 font-poppins text-[16px]">

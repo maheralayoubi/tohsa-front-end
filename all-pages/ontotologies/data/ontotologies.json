@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "GlycoRDF",
+    "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  "
+  },
+  {
+    "id": "2",
+    "title": "GlycoCo0",
+    "content": "GlycoCo0 is a standard ontology for glycoconjugate  data (glycoprotein/glycolipid structures, publication information, biological source information, experimental data).  "
+  },
+  {
+    "id": "3",
+    "title": "GGDonto",
+    "content": "Ontology od genetic diseases known to be related to Glycan Metabolism. "
+  },
+  {
+    "id": "4",
+    "title": "PAConto",
+    "content": "RDF representation of PACDB data and ontology of Infectious Diseases known to be related to Glycan Binding.  "
+  }
+]

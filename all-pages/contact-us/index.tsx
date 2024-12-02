@@ -1,15 +1,18 @@
 import React from "react";
 
+// data
+import contactPageData from "./data/contactPageData.json"
+
 // sections
 import Footer from "@/global-components/Footer";
-
+import ContactUsHero from "./sections/ContactHero";
+import ContactUsDetails from "./sections/ContactUsDetails";
 
 const Index: React.FC = () => {
     return (
         <main>
-            <section className="flex items-center justify-center h-[calc(100vh-80px)] text-5xl">
-                Contact Us
-            </section>
+            <ContactUsHero image="/images/contactHero.png" title="CONTACT US" />
+            <ContactUsDetails data={contactPageData} />
             <Footer />
         </main>
     )
