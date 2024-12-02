@@ -38,3 +38,18 @@ type Ontotologies = {
     title: string,
     content: string,
 }
+
+type Profile = {
+    id: string,
+    userName: string,
+    image: string,
+    work: string,
+    shortDiscription: string,
+    biography: string,
+    contact: {
+        email: string,
+        twitter: string,
+        facebook: string,
+        linkedin: string
+    }
+}
