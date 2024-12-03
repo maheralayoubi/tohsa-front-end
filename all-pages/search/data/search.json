@@ -1,0 +1,47 @@
+{
+  "article": [],
+  "studyMaterial": [
+    {
+      "id": "1",
+      "question": "What IS Glycans?",
+      "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
+      "href": "/"
+    },
+    {
+      "id": "2",
+      "question": "What IS Glycans2?",
+      "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
+      "href": "/"
+    }
+  ],
+  "research": [
+    {
+      "id": "1",
+      "title": "Research Project 1",
+      "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
+      "href": "/",
+      "image": "/images_db/project1.jpeg"
+    },
+    {
+      "id": "2",
+      "title": "Research Project 2 Long Title",
+      "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
+      "href": "/",
+      "image": "/images_db/project2.jpeg"
+    }
+  ],
+  "dataRecourses": [
+    {
+      "id": "1",
+      "title": "CAZy ",
+      "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
+      "href": "/"
+    },
+    {
+      "id": "2",
+      "title": "GlycoEpitope",
+      "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
+      "href": "/"
+    }
+  ]
+}
