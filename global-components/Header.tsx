@@ -41,7 +41,7 @@ const Header = () => {
   // };
 
   return (
-    <header className="px-[16px] py-[8px] md:px-[40px] md:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
+    <header className="px-[16px] py-[8px] lg:px-[40px] lg:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
       <div className="flex justify-between items-center">
         {/* Logo and Navigation */}
         <div className="flex items-center space-x-10">
@@ -52,7 +52,7 @@ const Header = () => {
               alt="menu"
               width={24}
               height={24}
-              className="cursor-pointer md:hidden"
+              className="cursor-pointer lg:hidden"
               onClick={() => setDisplayNav(!displayNav)}
             />
             <Image
@@ -65,7 +65,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden lg:block">
             <ul className="flex items-center space-x-5 font-poppins text-[16px]">
               {navLinks.map((link, index) => (
                 <li key={index} className="cursor-pointer">
@@ -77,7 +77,7 @@ const Header = () => {
         </div>
         <SearchBtn />
         {/* Action Links */}
-        <nav className="hidden md:block">
+        <nav className="hidden lg:block">
           <ul className="flex items-center space-x-5 font-poppins text-[16px]">
             {actionLinks.map((link, index) => (
               <li key={index} className="cursor-pointer">
@@ -94,7 +94,7 @@ const Header = () => {
           }`}
       ></div>
       <div
-        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
+        className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
           }`}
       >
         <div className="block w-100 relative h-[24px]">
