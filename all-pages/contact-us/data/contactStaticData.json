@@ -1,4 +1,6 @@
 {
+  "pageTitle": "CONTACT US",
+  "imagePageSrc": "/images/contactHero.png",
   "question": {
     "q1": "Do you have any questions or comments? Send us an ",
     "emailLink": "mailto:info@tohsa.com",
@@ -21,6 +23,10 @@
     },
     "twitter": "https://twitter.com",
     "youtube": "https://youtube.com"
+  },
+  "hexagon": {
+    "tohsa": "TOHSA",
+    "title": " TOTAL HUMAN SACCHARIDE ATLAS"
   },
   "input": {
     "label": "Enroll to our news letter",

@@ -9,7 +9,6 @@ import NewsHero from "./sections/NewsHero";
 import Footer from "@/global-components/Footer";
 import Overview from "./sections/Overview";
 
-
 interface NewsPage {
     id: string;
 }
