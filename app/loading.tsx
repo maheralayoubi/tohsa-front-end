@@ -1,12 +1,7 @@
-import React from "react";
+import { LoadingPage } from "@/global-components/Loading";
 
-const loading = () => {
-    return (
-        <section className="flex flex-col items-center justify-center w-full h-[calc(100vh-80px)] gap-10">
-            <span className="loaderPage"></span>
-            <h2 className='text-2xl font-bold text-gray-500'>Loading ...</h2>
-        </section>
-    )
+const loading: React.FC = () => {
+    return <LoadingPage />
 };
 
 export default loading;
