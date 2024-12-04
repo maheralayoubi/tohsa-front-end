@@ -4,6 +4,7 @@ import data from "../all-pages/home/data/sidebarData.json";
 import { useState, useRef } from "react";
 import "../app/styles/header.css";
 import dynamic from "next/dynamic";
+import SearchBtn from "./SearchBtn";
 import Link from "next/link";
 
 const Header = () => {
@@ -41,7 +42,7 @@ const Header = () => {
   // };
 
   return (
-    <header className="px-[16px] py-[8px] md:px-[40px] md:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
+    <header className="px-[16px] py-[8px] lg:px-[40px] lg:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
       <div className="flex justify-between items-center">
         {/* Logo and Navigation */}
         <div className="flex items-center space-x-10">
@@ -52,7 +53,7 @@ const Header = () => {
               alt="menu"
               width={24}
               height={24}
-              className="cursor-pointer md:hidden"
+              className="cursor-pointer lg:hidden"
               onClick={() => setDisplayNav(!displayNav)}
             />
             <Link href="/">
@@ -67,11 +68,11 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden lg:block">
             <ul className="flex items-center space-x-5 font-poppins text-[16px]">
               {navLinks.map((link, index) => (
-                <Link href={link.toLowerCase()}>
-                  <li key={index} className="cursor-pointer">
+                <Link key={index} href={link.toLowerCase()}>
+                  <li className="cursor-pointer">
                     {link}
                   </li>
                 </Link>
@@ -79,13 +80,13 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-
+        <SearchBtn />
         {/* Action Links */}
-        <nav className="hidden md:block">
+        <nav className="hidden lg:block">
           <ul className="flex items-center space-x-5 font-poppins text-[16px]">
             {actionLinks.map((link, index) => (
-              <Link href={link.toLowerCase()}>
-                <li key={index} className="cursor-pointer">
+              <Link key={index} href={link.toLowerCase()}>
+                <li className="cursor-pointer">
                   {link}
                 </li>
               </Link>
@@ -96,15 +97,13 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${
-          displayNav ? "block" : "hidden"
-        }`}
+        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
+          }`}
         onClick={() => setDisplayNav(!displayNav)}
       ></div>
       <div
-        className={`z-50 md:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
-          displayNav ? "translate-x-0" : "translate-x-[-100%]"
-        }`}
+        className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
       >
         <div className="block w-100 relative h-[24px]">
           <Image
@@ -160,16 +159,14 @@ const Header = () => {
                     alt="toggle arrow"
                     width={16}
                     height={16}
-                    className={`transition-transform ${
-                      openSections === index ? "rotate-90" : "rotate-0"
-                    }`}
+                    className={`transition-transform ${openSections === index ? "rotate-90" : "rotate-0"
+                      }`}
                   />
                 </div>
                 {/* Collapsible Content */}
                 <ul
-                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${
-                    openSections === index ? "max-h-[500px]" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${openSections === index ? "max-h-[500px]" : "max-h-0"
+                    }`}
                 >
                   {item.items.map((subItem, subIndex) => (
                     <li
