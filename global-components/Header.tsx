@@ -5,6 +5,7 @@ import { useState, useRef } from "react";
 import "../app/styles/header.css";
 import dynamic from "next/dynamic";
 import SearchBtn from "./SearchBtn";
+import Link from "next/link";
 
 const Header = () => {
   const [navLinks] = useState<string[]>([
@@ -55,22 +56,26 @@ const Header = () => {
               className="cursor-pointer lg:hidden"
               onClick={() => setDisplayNav(!displayNav)}
             />
-            <Image
-              src="/images/Logo.svg"
-              alt="logo"
-              width={220}
-              height={64}
-              className="w-[139px] h-[40px]"
-            />
+            <Link href="/">
+              <Image
+                src="/images/Logo.svg"
+                alt="logo"
+                width={220}
+                height={64}
+                className="w-[139px] h-[40px]"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <ul className="flex items-center space-x-5 font-poppins text-[16px]">
               {navLinks.map((link, index) => (
-                <li key={index} className="cursor-pointer">
-                  {link}
-                </li>
+                <Link key={index} href={link.toLowerCase()}>
+                  <li className="cursor-pointer">
+                    {link}
+                  </li>
+                </Link>
               ))}
             </ul>
           </nav>
@@ -80,9 +85,11 @@ const Header = () => {
         <nav className="hidden lg:block">
           <ul className="flex items-center space-x-5 font-poppins text-[16px]">
             {actionLinks.map((link, index) => (
-              <li key={index} className="cursor-pointer">
-                {link}
-              </li>
+              <Link key={index} href={link.toLowerCase()}>
+                <li className="cursor-pointer">
+                  {link}
+                </li>
+              </Link>
             ))}
           </ul>
         </nav>
@@ -90,8 +97,9 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] absolute top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
+        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
           }`}
+        onClick={() => setDisplayNav(!displayNav)}
       ></div>
       <div
         className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"

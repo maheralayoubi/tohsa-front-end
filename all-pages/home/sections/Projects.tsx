@@ -11,7 +11,7 @@ const ProjectCard = ({ image, title }: { image: string; title: string }) => {
         alt={title}
         width={210}
         height={140}
-        className="w-[120px] h-[80px] lg:h-[140px] lg:w-[210px] rounded-lg group-hover:rounded-r-none group-hover:rounded-br-none-none"
+        className="w-[120px] h-[80px] lg:h-[140px] lg:w-[210px] rounded-lg"
       />
       <h2 className="font-poppins text-[14px] lg:text-[20px] font-bold text-left flex items-center flex-1 group-hover:text-white">
         {title}
@@ -36,7 +36,7 @@ const Projects = () => {
           src="/images/nn5.png"
           alt="nn5"
           fill
-          className=" w-full h-[265px] lg:h-full"
+          className=" w-full h-[265px] lg:h-full object-cover"
         />
       </div>
       <div className="w-full">
