@@ -1,43 +1,55 @@
 "use client";
-import React from "react";
-import data from "@/DB/about.json";
+import React, { useState, useCallback } from "react";
+import {
+  APIProvider,
+  Map,
+  AdvancedMarker,
+  Pin,
+  InfoWindow,
+  useAdvancedMarkerRef,
+} from "@vis.gl/react-google-maps";
 import Image from "next/image";
 import Link from "next/link";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-// import required modules
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 
-interface TextSectionProps {
-  title: string;
-  content: string;
-}
-
-interface ImageOverlayProps {
-  src: string;
-  alt: string;
-  galleryText: string;
-}
-
-interface IData {
-  data: {
-    id: string;
-    name: string;
-    position: string;
-    description: string;
-    image: string;
-  };
-}
+import data from "@/DB/about.json";
 
 const MissionAbout = () => {
-  const renderParagraphs = (text: string) =>
-    text.split("\n").map((item, index) => <p key={index}>{item}</p>);
+  const [infoWindowContent, setInfoWindowContent] = useState<string | null>(
+    null
+  );
+  const [markerRef, marker] = useAdvancedMarkerRef();
+
+  const handleMarkerClick = useCallback((content: string) => {
+    setInfoWindowContent(content);
+  }, []);
+
+  const handleClose = useCallback(() => setInfoWindowContent(null), []);
+
+  const points = [
+    {
+      lat: 35.69096901929455,
+      lng: 139.32697701898522,
+      title: "Soka University",
+      description: "A private university in Japan",
+    },
+    {
+      lat: 35.462965659260746,
+      lng: 136.73972800365033,
+      title: "Nagoya University",
+      description: "A national university in Japan",
+    },
+    {
+      lat: 35.663838156036896,
+      lng: 139.74415914596835,
+      title: "Tokyo University",
+      description: "A prestigious university in Japan",
+    },
+  ];
 
   const Sidebar = () => (
     <div className="sidebar hidden lg:block w-[30%] px-[20px] pt-[80px] sticky top-20 self-start">
@@ -72,32 +84,18 @@ const MissionAbout = () => {
     </div>
   );
 
-  const TextSection = ({ title, content }: TextSectionProps) => (
+  const TextSection = ({
+    title,
+    content,
+  }: {
+    title: string;
+    content: string;
+  }) => (
     <div className="space-y-5">
       <h3 className="font-bold text-[32px]">{title}</h3>
-      {renderParagraphs(content)}
-    </div>
-  );
-
-  const ImageOverlay = ({ src, alt, galleryText }: ImageOverlayProps) => (
-    <div className="relative w-fit rounded-lg overflow-hidden">
-      <div className="absolute z-10 w-full h-full top-0 left-0 flex justify-center items-center flex-col space-y-2">
-        <Image
-          src="/images/gallery.svg"
-          alt="Gallery Icon"
-          width={40}
-          height={40}
-        />
-        <p className="text-white font-poppins text-[16px]">{galleryText}</p>
-      </div>
-      <div className="overlay absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-      <Image
-        src={src}
-        alt={alt}
-        width={280}
-        height={195}
-        className="min-w-[200px] min-h-[195px]"
-      />
+      {content.split("\n").map((item, index) => (
+        <p key={index}>{item}</p>
+      ))}
     </div>
   );
 
@@ -124,27 +122,32 @@ const MissionAbout = () => {
             height={195}
             className="rounded-lg object-contain"
           />
-          <ImageOverlay
-            src={data.historyImages.lastImage}
-            alt="History Last Image"
-            galleryText="See all 12 images"
-          />
+          <div className="relative w-fit rounded-lg overflow-hidden">
+            <div className="absolute z-10 w-full h-full top-0 left-0 flex justify-center items-center flex-col space-y-2">
+              <Image
+                src="/images/gallery.svg"
+                alt="Gallery Icon"
+                width={40}
+                height={40}
+              />
+              <p className="text-white font-poppins text-[16px]">
+                See all 12 images
+              </p>
+            </div>
+            <div className="overlay absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+            <Image
+              src={data.historyImages.lastImage}
+              alt="History Last Image"
+              width={280}
+              height={195}
+              className="min-w-[200px] min-h-[195px]"
+            />
+          </div>
         </div>
       </div>
       <TextSection title="Funding And Early Days" content={data.funding} />
       <TextSection title="Milestones" content={data.milestones} />
       <TextSection title="Current Status" content={data.current} />
-    </div>
-  );
-
-  const TeamCard = ({ data }: IData) => (
-    <div className="bg-[#F0F5FF] p-5 rounded-[20px] font-poppins">
-      <Image src={data.image} width={352} height={240} alt={data.name} />
-      <div className="mt-5 space-y-2 text-center">
-        <h3 className="font-bold text-[24px]">{data.name}</h3>
-        <p className="text-[16px]">{data.position}</p>
-        <p className="text-[16px] text-[#484848]">{data.description}</p>
-      </div>
     </div>
   );
 
@@ -168,7 +171,19 @@ const MissionAbout = () => {
       >
         {data.team.teamMembers.map((item) => (
           <SwiperSlide key={item.id}>
-            <TeamCard data={item} />
+            <div className="bg-[#F0F5FF] p-5 rounded-[20px] font-poppins">
+              <Image
+                src={item.image}
+                width={352}
+                height={240}
+                alt={item.name}
+              />
+              <div className="mt-5 space-y-2 text-center">
+                <h3 className="font-bold text-[24px]">{item.name}</h3>
+                <p className="text-[16px]">{item.position}</p>
+                <p className="text-[16px] text-[#484848]">{item.description}</p>
+              </div>
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -215,12 +230,53 @@ const MissionAbout = () => {
         <div className="space-y-10">
           <h2 className="font-bold text-[40px]">Mission & Vision</h2>
           <h3 className="font-bold text-[32px]">Mission</h3>
-          {renderParagraphs(data.mission)}
-          <VisionSection />
+          <p>{data.mission}</p>
         </div>
+        <VisionSection />
         <HistorySection />
         <TeamSection />
         <PartnersSection />
+        {/* <APIProvider apiKey="AIzaSyAasl6wBYlGVsDxcsoLBD4RDPmpAOF0vuQ">
+          <Map
+            mapId="bf51a910020fa25a"
+            defaultZoom={5.6}
+            defaultCenter={{ lat: 35.69096901929455, lng: 139.32697701898522 }}
+            gestureHandling="greedy"
+            disableDefaultUI={false}
+            fullscreenControl={false}
+            className="h-[460px]"
+          >
+            {points.map((point, index) => (
+              <AdvancedMarker
+                key={index}
+                ref={markerRef}
+                position={{ lat: point.lat, lng: point.lng }}
+                onClick={() =>
+                  handleMarkerClick(`${point.title}: ${point.description}`)
+                }
+              >
+                <Pin
+                  background={infoWindowContent ? "#EA4335" : "#57369E"}
+                  glyphColor={infoWindowContent ? "#B31412" : "#FFFFFF"}
+                  borderColor={infoWindowContent ? "#B31412" : "#FFFFFF"}
+                />
+                {infoWindowContent && (
+                  <InfoWindow anchor={marker} onClose={handleClose}>
+                    <h2>{infoWindowContent}</h2>
+                  </InfoWindow>
+                )}
+              </AdvancedMarker>
+            ))}
+          </Map>
+        </APIProvider> */}
+        <div className="w-[100%] h-[460px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6014443.780071412!2d142.8754536704671!3d35.45247405148201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191e54e1f331d7%3A0x1e7ff0811c66662d!2z2KzYp9mF2LnYqSDYs9mI2YPYpw!5e0!3m2!1sar!2s!4v1733423808349!5m2!1sar!2s"
+            width="100%"
+            height="100%"
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
     </section>
   );
