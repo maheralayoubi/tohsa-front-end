@@ -1,13 +1,5 @@
 "use client";
-import React, { useState, useCallback } from "react";
-import {
-  APIProvider,
-  Map,
-  AdvancedMarker,
-  Pin,
-  InfoWindow,
-  useAdvancedMarkerRef,
-} from "@vis.gl/react-google-maps";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,42 +7,9 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
-
 import data from "@/DB/about.json";
 
 const MissionAbout = () => {
-  const [infoWindowContent, setInfoWindowContent] = useState<string | null>(
-    null
-  );
-  const [markerRef, marker] = useAdvancedMarkerRef();
-
-  const handleMarkerClick = useCallback((content: string) => {
-    setInfoWindowContent(content);
-  }, []);
-
-  const handleClose = useCallback(() => setInfoWindowContent(null), []);
-
-  const points = [
-    {
-      lat: 35.69096901929455,
-      lng: 139.32697701898522,
-      title: "Soka University",
-      description: "A private university in Japan",
-    },
-    {
-      lat: 35.462965659260746,
-      lng: 136.73972800365033,
-      title: "Nagoya University",
-      description: "A national university in Japan",
-    },
-    {
-      lat: 35.663838156036896,
-      lng: 139.74415914596835,
-      title: "Tokyo University",
-      description: "A prestigious university in Japan",
-    },
-  ];
-
   const Sidebar = () => (
     <div className="sidebar hidden lg:block w-[30%] px-[20px] pt-[80px] sticky top-20 self-start">
       <h3 className="underline-offset-8 underline font-bold text-[20px]">
@@ -89,13 +48,12 @@ const MissionAbout = () => {
     content,
   }: {
     title: string;
-    content: string;
+    content?: string;
   }) => (
     <div className="space-y-5">
       <h3 className="font-bold text-[32px]">{title}</h3>
-      {content.split("\n").map((item, index) => (
-        <p key={index}>{item}</p>
-      ))}
+      {content &&
+        content.split("\n").map((item, index) => <p key={index}>{item}</p>)}
     </div>
   );
 
@@ -220,8 +178,61 @@ const MissionAbout = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="w-[100%] h-[460px] mt-[40px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6014443.780071412!2d142.8754536704671!3d35.45247405148201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191e54e1f331d7%3A0x1e7ff0811c66662d!2z2KzYp9mF2LnYqSDYs9mI2YPYpw!5e0!3m2!1sar!2s!4v1733423808349!5m2!1sar!2s"
+          width="100%"
+          height="100%"
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
   );
+
+  const FAQsSection = () => {
+    const [openFaq, setOpenFaq] = useState<string | null>(null);
+
+    const toggleFaq = (id: string) => {
+      setOpenFaq((prev) => (prev === id ? null : id));
+    };
+
+    return (
+      <div className="space-y-10 font-poppins" id="faqs">
+        <TextSection title="FAQs" />
+        <div className="space-y-5">
+          {data.faqs.map((faq) => (
+            <div
+              key={faq.id}
+              className={`p-5 rounded-lg border-[1px] ${
+                openFaq === faq.id
+                  ? "border-0 bg-[#F0F5FF]"
+                  : "border-[#BBBBBB]"
+              } font-bold text-[24px]`}
+            >
+              <div className="flex justify-between items-center">
+                <h3>Question {faq.id}</h3>
+                <Image
+                  src={
+                    openFaq === faq.id
+                      ? "images/close.svg"
+                      : "images/arrow-right.svg"
+                  }
+                  alt={openFaq === faq.id ? "close icon" : "arrow icon"}
+                  width={24}
+                  height={24}
+                  className="hover:cursor-pointer rotate-90"
+                  onClick={() => toggleFaq(faq.id)} // Toggle the FAQ visibility
+                />
+              </div>
+              {openFaq === faq.id && (
+                <p className="mt-5 font-normal">{faq.content}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section className="flex font-poppins">
@@ -236,47 +247,7 @@ const MissionAbout = () => {
         <HistorySection />
         <TeamSection />
         <PartnersSection />
-        {/* <APIProvider apiKey="AIzaSyAasl6wBYlGVsDxcsoLBD4RDPmpAOF0vuQ">
-          <Map
-            mapId="bf51a910020fa25a"
-            defaultZoom={5.6}
-            defaultCenter={{ lat: 35.69096901929455, lng: 139.32697701898522 }}
-            gestureHandling="greedy"
-            disableDefaultUI={false}
-            fullscreenControl={false}
-            className="h-[460px]"
-          >
-            {points.map((point, index) => (
-              <AdvancedMarker
-                key={index}
-                ref={markerRef}
-                position={{ lat: point.lat, lng: point.lng }}
-                onClick={() =>
-                  handleMarkerClick(`${point.title}: ${point.description}`)
-                }
-              >
-                <Pin
-                  background={infoWindowContent ? "#EA4335" : "#57369E"}
-                  glyphColor={infoWindowContent ? "#B31412" : "#FFFFFF"}
-                  borderColor={infoWindowContent ? "#B31412" : "#FFFFFF"}
-                />
-                {infoWindowContent && (
-                  <InfoWindow anchor={marker} onClose={handleClose}>
-                    <h2>{infoWindowContent}</h2>
-                  </InfoWindow>
-                )}
-              </AdvancedMarker>
-            ))}
-          </Map>
-        </APIProvider> */}
-        <div className="w-[100%] h-[460px]">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6014443.780071412!2d142.8754536704671!3d35.45247405148201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191e54e1f331d7%3A0x1e7ff0811c66662d!2z2KzYp9mF2LnYqSDYs9mI2YPYpw!5e0!3m2!1sar!2s!4v1733423808349!5m2!1sar!2s"
-            width="100%"
-            height="100%"
-            loading="lazy"
-          ></iframe>
-        </div>
+        <FAQsSection />
       </div>
     </section>
   );
