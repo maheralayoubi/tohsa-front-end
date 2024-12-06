@@ -92,6 +92,11 @@ table {
   width: 50%;
 }
 
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   color: #57369e !important;

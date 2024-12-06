@@ -160,14 +160,21 @@ const PartnersSection = () => (
       modules={[Navigation, Mousewheel, Keyboard]}
       className="mySwiper mt-[40px]"
     >
-      {data.partnersImages.map((item, index) => (
-        <SwiperSlide key={index} className="h-20">
+      {/* Slides */}
+      {[
+        "footer1.png",
+        "footer2.png",
+        "footer3.png",
+        "footer4.png",
+        "footer5.png",
+      ].map((image, index) => (
+        <SwiperSlide key={index} className="h-20 relative">
           <Image
-            src={item}
+            src={`/images/${image}`}
+            alt={`footer ${index + 1}`}
             height={40}
             width={240}
-            alt={`footer ${index + 1}`}
-            className="h-[40px] w-[240px] mySwiper"
+            className="object-contain self-center"
           />
         </SwiperSlide>
       ))}
