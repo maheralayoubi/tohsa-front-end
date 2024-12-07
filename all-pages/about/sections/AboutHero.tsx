@@ -12,8 +12,8 @@ const AboutHero = ({}: IAboutHeroProps) => {
           fill
           className="object-cover"
         />
-        <div className="max-w-[400px] absolute left-[10%] top-[30%]">
-          <h1 className="text-[80px] text-white font-poppins font-bold text-wrap">
+        <div className="w-[84px] max-w-[400px] absolute left-[10%] top-[30%]">
+          <h1 className="text-[24px] lg:text-[80px] text-white font-poppins font-bold text-wrap">
             ABOUT TOHSA
           </h1>
         </div>
