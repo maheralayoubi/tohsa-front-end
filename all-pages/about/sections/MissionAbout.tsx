@@ -21,7 +21,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar hidden lg:block lg:w-[30%] px-5 lg:px-[20px] pt-[80px] sticky top-20 self-start">
+    <div className="sidebar hidden lg:block lg:w-[30%] px-5 lg:px-[20px] pt-[80px] sticky top-20 self-start container text-nowrap">
       <h3 className="underline-offset-8 underline font-bold text-[20px]">
         Mission & Vision
       </h3>
@@ -83,11 +83,6 @@ const VisionSection = () => (
 const HistorySection = () => (
   <div className="space-y-2 lg:space-y-10" id="history">
     <TextSection title={`History \n Our Journey: The Evolution of HGA-TOHSA`} />
-    {/* <h3 className="font-bold text-[24px] lg:text-[32px] leading-[50px]">
-      History
-      <br />
-      Our Journey: The Evolution of HGA-TOHSA
-    </h3> */}
     <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-5">
       {/* Main Image */}
       <Image
@@ -230,13 +225,11 @@ const FAQsSection = () => {
           <div
             key={faq.id}
             className={`p-2 lg:p-5 rounded-lg border-[1px] ${
-              openFaq === faq.id
-                ? "border-[0px] bg-[#F0F5FF]"
-                : "border-[#BBBBBB]"
+              openFaq === faq.id ? "border-0 bg-[#F0F5FF]" : "border-[#BBBBBB]"
             } font-bold text-[20px] lg:text-[24px]`}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-[16px]">Question {faq.id}</h3>
+              <h3 className="text-[16px] lg:text-[24px]">Question {faq.id}</h3>
               <Image
                 src={
                   openFaq === faq.id
@@ -251,7 +244,7 @@ const FAQsSection = () => {
               />
             </div>
             {openFaq === faq.id && (
-              <p className="mt-2 lg:mt-5 text-[12px] font-normal">
+              <p className="mt-2 lg:mt-5 text-[12px] lg:text-[24px] font-normal">
                 {faq.content}
               </p>
             )}
