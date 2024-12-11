@@ -4,22 +4,13 @@ import "./globals.css";
 // sections
 import Header from "@/global-components/Header";
 
-// fonts
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
-});
-
 // metadata
 export const metadata: Metadata = {
   title: {
-    template: '%s | Tohsa',
-    default: 'Tohsa',
+    template: "%s | Tohsa",
+    default: "Tohsa",
   },
-  description: "Tohsa description"
+  description: "Tohsa description",
 };
 
 export default function RootLayout({
@@ -29,7 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}`}>
+      {/* Use the CSS variable for font-family */}
+      <body style={{ fontFamily: "var(--font-poppins)" }}>
         <Header />
         {children}
       </body>
