@@ -225,7 +225,7 @@ const FAQsSection = () => {
           <div
             key={faq.id}
             className={`p-2 lg:p-5 rounded-lg border-[1px] ${
-              openFaq === faq.id ? "border-0 bg-[#F0F5FF]" : "border-[#BBBBBB]"
+              openFaq === faq.id ? "border-transparent bg-[#F0F5FF]" : "border-[#BBBBBB]"
             } font-bold text-[20px] lg:text-[24px]`}
           >
             <div className="flex justify-between items-center">
