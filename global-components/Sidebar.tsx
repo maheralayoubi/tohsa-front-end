@@ -16,7 +16,7 @@ const Sidebar = ({ links, title }: ISidebarProps) => {
 
   return (
     <div className="sidebar hidden lg:block lg:w-[30%] px-5 lg:px-[20px] py-[80px] sticky top-20 self-start container text-nowrap">
-      <h3 className="underline-offset-8 underline font-bold text-[20px]">
+      <h3 className="underline-offset-8 underline decoration-2 decoration-[#57369E] font-bold text-[20px]">
         {title}
       </h3>
       <ul className="space-y-5 mt-5">

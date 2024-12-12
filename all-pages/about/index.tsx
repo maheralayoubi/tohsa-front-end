@@ -1,18 +1,15 @@
-import React from "react";
-
-// sections
+import HeroSection from "@/global-components/HeroSection";
+import IndexWarper from "./IndexWarper";
 import Footer from "@/global-components/Footer";
-import HeroSection from "../../global-components/HeroSection";
-import MissionAbout from "./sections/MissionAbout";
 
-const Index: React.FC = () => {
+function Index() {
   return (
     <main>
       <HeroSection title="ABOUT TOHSA" imageSource="/images/about-hero.png" />
-      <MissionAbout />
+      <IndexWarper />
       <Footer />
     </main>
   );
-};
+}
 
 export default Index;
