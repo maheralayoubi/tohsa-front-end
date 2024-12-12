@@ -1,66 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 import data from "@/DB/about.json";
-
-const Sidebar = () => {
-  const handleScroll = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -100;
-      const y =
-        section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  };
-
-  return (
-    <div className="sidebar hidden lg:block lg:w-[30%] px-5 lg:px-[20px] pt-[80px] sticky top-20 self-start container text-nowrap">
-      <h3 className="underline-offset-8 underline font-bold text-[20px]">
-        Mission & Vision
-      </h3>
-      <ul className="space-y-5 mt-5">
-        {data.links.map((link, index) => {
-          const id = link.toLowerCase().split(" ").join("-");
-          return (
-            <li key={index}>
-              <button onClick={() => handleScroll(id)}>{link}</button>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-};
-
-const TextSection = ({
-  title,
-  content,
-}: {
-  title: string;
-  content?: string;
-}) => (
-  <div className="space-y-2 lg:space-y-5 max-w-full">
-    <h3 className="font-bold text-[16px] lg:text-[32px]">{title}</h3>
-    {content &&
-      content.split("\n").map((item, index) => (
-        <p key={index} className="text-[12px] lg:text-[24px]">
-          {item}
-        </p>
-      ))}
-  </div>
-);
+import Sidebar from "@/global-components/Sidebar";
+import Paragraph from "@/global-components/Paragraph";
 
 const MissionSection = () => (
   <div className="space-y-5 lg:space-y-10">
     <h2 className="font-bold text-[16px] lg:text-[40px]">Mission & Vision</h2>
-    <TextSection title="Mission" content={data.mission} />
+    <Paragraph title="Mission" content={data.mission} />
     <VisionSection />
   </div>
 );
@@ -75,14 +28,14 @@ const VisionSection = () => (
       className="rounded-lg w-full lg:w-[50%] object-cover"
     />
     <div>
-      <TextSection title="Vision" content={data.vision} />
+      <Paragraph title="Vision" content={data.vision} />
     </div>
   </div>
 );
 
 const HistorySection = () => (
   <div className="space-y-2 lg:space-y-10" id="history">
-    <TextSection title={`History \n Our Journey: The Evolution of HGA-TOHSA`} />
+    <Paragraph title={`History \n Our Journey: The Evolution of HGA-TOHSA`} />
     <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-5">
       {/* Main Image */}
       <Image
@@ -127,15 +80,15 @@ const HistorySection = () => (
       </div>
     </div>
 
-    <TextSection title="Funding And Early Days" content={data.funding} />
-    <TextSection title="Milestones" content={data.milestones} />
-    <TextSection title="Current Status" content={data.current} />
+    <Paragraph title="Funding And Early Days" content={data.funding} />
+    <Paragraph title="Milestones" content={data.milestones} />
+    <Paragraph title="Current Status" content={data.current} />
   </div>
 );
 
 const TeamSection = () => (
   <div id="team">
-    <TextSection title="Team" content={data.team.description} />
+    <Paragraph title="Team" content={data.team.description} />
     <Swiper
       spaceBetween={20}
       slidesPerView={1.2}
@@ -172,7 +125,7 @@ const TeamSection = () => (
 
 const PartnersSection = () => (
   <div id="partners-&-collaborators">
-    <TextSection title="Partners & Collaborators" content={data.partners} />
+    <Paragraph title="Partners & Collaborators" content={data.partners} />
     <Swiper
       spaceBetween={10}
       slidesPerView={1.5}
@@ -219,13 +172,15 @@ const FAQsSection = () => {
 
   return (
     <div className="space-y-2 lg:space-y-10" id="faqs">
-      <TextSection title="FAQs" />
+      <Paragraph title="FAQs" />
       <div className="space-y-2 lg:space-y-5">
         {data.faqs.map((faq) => (
           <div
             key={faq.id}
             className={`p-2 lg:p-5 rounded-lg border-[1px] ${
-              openFaq === faq.id ? "border-transparent bg-[#F0F5FF]" : "border-[#BBBBBB]"
+              openFaq === faq.id
+                ? "border-transparent bg-[#F0F5FF]"
+                : "border-[#BBBBBB]"
             } font-bold text-[20px] lg:text-[24px]`}
           >
             <div className="flex justify-between items-center">
@@ -257,7 +212,7 @@ const FAQsSection = () => {
 
 const MissionAbout = () => (
   <section className="flex flex-col lg:flex-row container">
-    <Sidebar />
+    <Sidebar title="Mission & Vision" links={data.links} />
     <div className="space-y-10 lg:space-y-[128px] py-10 px-5 lg:py-32 lg:px-10 max-w-[920px] text-[#111118] mx-auto text-sm lg:text-2xl font-normal container">
       <MissionSection />
       <HistorySection />
