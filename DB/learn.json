@@ -1,0 +1,62 @@
+{
+  "links": [
+    "Data Resources",
+    "Video Tutorial"
+  ],
+  "intro": "Welcome to the earning hub, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
+  "questions": [
+    {
+      "title": "What Is Glycans?",
+      "link": "/"
+    },
+    {
+      "title": "What Is Glycosmis?",
+      "link": "/"
+    },
+    {
+      "title": "What Are Glycoproteins?",
+      "link": "/"
+    },
+    {
+      "title": "What Are Glycolipids?",
+      "link": "/"
+    },
+    {
+      "title": "What is Semantic Web?",
+      "link": "/"
+    }
+  ],
+  "resources": [
+    {
+      "title": "uniProt",
+      "description": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.",
+      "link": "/"
+    },
+    {
+      "title": "CAZy",
+      "description": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.",
+      "link": "/"
+    },
+    {
+      "title": "GlycoEpitope",
+      "description": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.",
+      "link": "/"
+    },
+    {
+      "title": "Glycofonam",
+      "description": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.",
+      "link": "/"
+    },
+    {
+      "title": "Glycomies@Expasy",
+      "description": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.",
+      "link": "/"
+    },
+    {
+      "title": "MIRAGE",
+      "description": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.",
+      "link": "/"
+    }
+  ],
+  "video": "/images_db/about1.png"
+}
