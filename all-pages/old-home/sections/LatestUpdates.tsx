@@ -1,6 +1,7 @@
 "use client";
 
-// data
+import Link from "next/link";
+import React, { useState } from "react";
 import newsData from "@/DB/news.json";
 
 // Import Swiper React components
@@ -16,13 +17,23 @@ import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 
 // components
 import NewsCard from "./components/NewsCard";
-import Link from "next/link";
+import Image from "next/image";
 
 const LatestUpdates = () => {
+  const [imgSrc, setImgSrc] = useState("/images/arrow-right-colored.svg");
   return (
-    <section className="text-base lg:text-base font-normal px-5 lg:px-32 py-10 lg:py-32 space-y-10">
-      <div className="w-full flex items-center justify-between">
-        <h2 className="text-[#57369E] font-bold lg:text-3xl">Latest Updates</h2>
+    <section className="text-base lg:text-base font-normal px-5 py-10 lg:py-32 space-y-10">
+      <div className="w-full flex items-center justify-between lg:px-16">
+        <h2 className="text-[#484848] font-bold lg:text-3xl">Latest Updates</h2>
+        <Link
+          href="/news"
+          className="flex items-center justify-center gap-1 text-[#57369E] hover:text-[#00A7D3] transition-colors duration-500"
+          onMouseEnter={() => setImgSrc("/images/arrow-right-hover.svg")}
+          onMouseLeave={() => setImgSrc("/images/arrow-right-colored.svg")}
+        >
+          <span>View All News</span>
+          <Image src={imgSrc} alt="see more" width={24} height={24} />
+        </Link>
       </div>
 
       <Swiper
@@ -46,13 +57,6 @@ const LatestUpdates = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <Link href="/news" className="flex items-center">
-        <span className="mx-auto py-3 px-8 text-[#57369E] border border-[#57369E] hover:bg-[#00A7D3] hover:text-white hover:border-[#00A7D3] transition-colors duration-500">
-          More News
-        </span>
-      </Link>
-
     </section>
   );
 };

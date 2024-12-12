@@ -1,0 +1,36 @@
+{
+  "navLinks": [
+    {
+      "id": "1",
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "id": "2",
+      "label": "Discovery",
+      "href": "/discovery"
+    },
+    {
+      "id": "3",
+      "label": "Access",
+      "href": "/access"
+    },
+    {
+      "id": "4",
+      "label": "Learn",
+      "href": "/learn"
+    }
+  ],
+  "actionLinks": [
+    {
+      "id": "1",
+      "label": "Contact Us",
+      "href": "/contact-us"
+    },
+    {
+      "id": "2",
+      "label": "Help",
+      "href": "/help"
+    }
+  ]
+}

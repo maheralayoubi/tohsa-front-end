@@ -1,20 +1,19 @@
 "use client";
 import Image from "next/image";
-import data from "../all-pages/home/data/sidebarData.json";
 import { useState, useRef } from "react";
 import "../app/styles/header.css";
-import dynamic from "next/dynamic";
 import SearchBtn from "./SearchBtn";
 import Link from "next/link";
 
+// components
+import { MobileNavItem, MobileSubNavItem } from "./MobileNavItem";
+
+// data
+import headerData from "./data/header.json"
+import sidebarData from "../all-pages/home/data/sidebarData.json";
+
 const Header = () => {
-  const [navLinks] = useState<string[]>([
-    "About",
-    "Discovery",
-    "Access",
-    "Learn",
-  ]);
-  const [actionLinks] = useState<string[]>(["Contact Us", "Help"]);
+
   const [displayNav, setDisplayNav] = useState<boolean>(false);
   const [openSections, setOpenSections] = useState<number | null>(null);
 
@@ -25,21 +24,7 @@ const Header = () => {
     setOpenSections(openSections === index ? null : index);
   };
 
-  // // Scroll up/down functions
-  // const scrollUp = () => {
-  //   if (scrollableContainerRef.current) {
-  //     scrollableContainerRef.current.scrollBy({
-  //       top: -100,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-
-  // const scrollDown = () => {
-  //   if (scrollableContainerRef.current) {
-  //     scrollableContainerRef.current.scrollBy({ top: 100, behavior: "smooth" });
-  //   }
-  // };
+  const toggleNav = () => setDisplayNav(prev => !prev)
 
   return (
     <header className="px-[16px] py-[8px] lg:px-[40px] lg:py-[20px] overflow-auto font-poppins sticky top-0 z-50 bg-white">
@@ -54,7 +39,7 @@ const Header = () => {
               width={24}
               height={24}
               className="cursor-pointer lg:hidden"
-              onClick={() => setDisplayNav(!displayNav)}
+              onClick={toggleNav}
             />
             <Link href="/">
               <Image
@@ -70,41 +55,41 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <ul className="flex items-center space-x-5 font-poppins text-[16px]">
-              {navLinks.map((link, index) => (
-                <Link key={index} href={link.toLowerCase()}>
-                  <li className="cursor-pointer">
-                    {link}
-                  </li>
-                </Link>
-              ))}
+              {headerData.navLinks.map(item =>
+                <li key={item.id} className="cursor-pointer">
+                  <Link href={item.href}>
+                    {item.label}
+                  </Link>
+                </li>
+              )}
             </ul>
           </nav>
+
         </div>
         <SearchBtn />
+
         {/* Action Links */}
         <nav className="hidden lg:block">
           <ul className="flex items-center space-x-5 font-poppins text-[16px]">
-            {actionLinks.map((link, index) => (
-              <Link key={index} href={link.toLowerCase()}>
-                <li className="cursor-pointer">
-                  {link}
-                </li>
-              </Link>
-            ))}
+            {headerData.actionLinks.map(item =>
+              <li key={item.id} className="cursor-pointer">
+                <Link href={item.href}>
+                  {item.label}
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
+
       </div>
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
-          }`}
-        onClick={() => setDisplayNav(!displayNav)}
-      ></div>
-      <div
-        className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
-          }`}
-      >
+        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"}`}
+        onClick={toggleNav}
+      />
+
+      <div className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"}`}>
         <div className="block w-100 relative h-[24px]">
           <Image
             src="/images/close.svg"
@@ -112,9 +97,10 @@ const Header = () => {
             width={24}
             height={24}
             className="absolute right-0 cursor-pointer"
-            onClick={() => setDisplayNav(!displayNav)}
+            onClick={toggleNav}
           />
         </div>
+
         <div className="flex justify-between items-center mb-8">
           <Image
             src="/images/Logo.svg"
@@ -131,23 +117,14 @@ const Header = () => {
           className="overflow-y-scroll max-h-[calc(100vh-200px)] no-scrollbar"
         >
           <ul className="space-y-[16px]">
-            {navLinks.map((link, index) => (
-              <li
-                key={index}
-                className="cursor-pointer flex justify-between pb-[17px] border-b-[1px] border-[#BBBBBB] text-[14px] font-poppins"
-              >
-                {link}
-                <Image
-                  src="/images/arrow-right.svg"
-                  alt="arrow right"
-                  width={16}
-                  height={16}
-                />
-              </li>
-            ))}
+
+            {/* navLinks */}
+            {headerData.navLinks.map(item =>
+              <MobileNavItem key={item.id} href={item.href} label={item.label} />
+            )}
 
             {/* Sidebar with scrollable submenu */}
-            {data.map((item, index) => (
+            {sidebarData.map((item, index) => (
               <li key={index} className="text-[14px] font-poppins">
                 <div
                   className="cursor-pointer flex justify-between pb-[17px] border-b-[1px] border-[#BBBBBB]"
@@ -159,56 +136,33 @@ const Header = () => {
                     alt="toggle arrow"
                     width={16}
                     height={16}
-                    className={`transition-transform ${openSections === index ? "rotate-90" : "rotate-0"
+                    className={`transition-transform ${openSections === index ? "-rotate-90" : "rotate-90"
                       }`}
                   />
                 </div>
                 {/* Collapsible Content */}
-                <ul
-                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${openSections === index ? "max-h-[500px]" : "max-h-0"
-                    }`}
-                >
-                  {item.items.map((subItem, subIndex) => (
-                    <li
-                      key={subIndex}
-                      className="cursor-pointer flex space-x-2 py-[17px] border-b-[1px] border-[#BBBBBB] text-[14px] font-poppins pl-[8px]"
-                    >
-                      <Image
-                        src="/images/setting.svg"
-                        alt="setting"
-                        width={24}
-                        height={24}
-                      />
-                      <span>{subItem.name}</span>
-                    </li>
-                  ))}
+                <ul className={`overflow-hidden transition-all duration-300 mb-[16px] ${openSections === index ? "max-h-[500px]" : "max-h-0"}`}>
+                  {item.items.map(item =>
+                    <MobileSubNavItem key={item.id} href={item.href} label={item.label} />
+                  )}
                 </ul>
               </li>
             ))}
 
             {/* Additional Action Links */}
-            {actionLinks.map((link, index) => (
-              <li
-                key={index}
-                className="cursor-pointer flex justify-between pb-[17px] border-b-[1px] border-[#BBBBBB] text-[14px] font-poppins"
-              >
-                {link}
-                <Image
-                  src="/images/arrow-right.svg"
-                  alt="arrow right"
-                  width={16}
-                  height={16}
-                />
-              </li>
-            ))}
+            {headerData.actionLinks.map(item =>
+              <MobileNavItem key={item.id} href={item.href} label={item.label} />
+            )}
+
           </ul>
           <p className="mt-[16px] text-[12px] opacity-[70%] font-poppins">
             Version 1.2
           </p>
         </div>
       </div>
-    </header>
+
+    </header >
   );
 };
 
-export default dynamic(() => Promise.resolve(Header), { ssr: false });
+export default Header

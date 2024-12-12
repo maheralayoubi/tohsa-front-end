@@ -2,9 +2,10 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
+import footerData from "./data/footer.json"
+
 // components
 import ToTopButton from "./ToTopButton";
-
 
 const Footer = () => {
   return (
@@ -12,13 +13,17 @@ const Footer = () => {
 
       {/* linsk */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 w-full max-w-full justify-items-start xl:justify-items-center text-left ">
+
         <div className="space-y-5 flex flex-col items-start justify-start">
-          <Link href="mailto:info@tohsa.com">CONTACT: info@tohsa.com</Link>
+          {/* email */}
+          <Link href={`mailto:${footerData.email.href}`}>{footerData.email.label}</Link>
           <div className="flex justify-between items-center space-x-[16px]">
-            <Link href="/">
+            {/* twitter */}
+            <Link href={footerData.twitter.href}>
               <Image src="/images/x.svg" alt="x logo" width={24} height={24} />
             </Link>
-            <Link href="/">
+            {/* youtube */}
+            <Link href={footerData.youtube.href}>
               <Image
                 src="/images/youtube.svg"
                 alt="youtube logo"
@@ -28,46 +33,49 @@ const Footer = () => {
             </Link>
           </div>
         </div>
+
+        {/* links Group_1 */}
         <div className="space-y-5 flex flex-col items-start justify-start">
-          <Link href="/">ABOUT TOHSA</Link>
-          <Link href="/">DISCOVERY</Link>
-          <Link href="/">ACCESS</Link>
-          <Link href="/">LEARN</Link>
+          {footerData.linksGroup_1.map(item =>
+            <Link key={item.id} href={item.href}>{item.label}</Link>
+          )}
         </div>
+
+        {/* links Group_2 */}
         <div className=" space-y-5 flex flex-col items-start justify-start">
-          <Link href="/">RESOURSES</Link>
-          <Link href="/">TOOLS</Link>
-          <Link href="/">STANDARDS</Link>
+          {footerData.linksGroup_2.map(item =>
+            <Link key={item.id} href={item.href}>{item.label}</Link>
+          )}
         </div>
         <ToTopButton />
       </div>
 
       {/* companies */}
       <div className="flex flex-wrap items-center justify-center max-w-full gap-x-5 gap-y-10 lg:gap-x-10 lg:gap-y-20">
-        <Link href="/" className="relative lg:scale-100 w-[120px] h-[20px] lg:w-[270px] lg:h-[45px]">
-          <Image src="/images/footer1.png" alt="footer1" fill />
+        <Link href="https://www.soka.ac.jp/" target="_blanck" className="relative lg:scale-100 w-[120px] h-[20px] lg:w-[270px] lg:h-[45px]">
+          <Image src="/images/soka.png" alt="soka" fill />
         </Link>
-        <Link href="/" className="relative lg:scale-100 w-[110px] h-[40px] lg:w-[220px] lg:h-[80px]">
-          <Image src="/images/footer2.png" alt="footer2" fill />
+        <Link href="https://igcore.thers.ac.jp/" target="_blanck" className="relative lg:scale-100 w-[110px] h-[40px] lg:w-[220px] lg:h-[80px]">
+          <Image src="/images/igcore.png" alt="igcore" fill />
         </Link>
-        <Link href="/" className="relative lg:scale-100 w-[65px] h-[40px] lg:w-[130px] lg:h-[80px]">
-          <Image src="/images/footer5.png" alt="footer5" fill />
+        <Link href="https://www.excells.orion.ac.jp/" target="_blanck" className="relative lg:scale-100 w-[65px] h-[40px] lg:w-[130px] lg:h-[80px]">
+          <Image src="/images/excells.png" alt="excells" fill />
         </Link>
-        <Link href="/" className="relative lg:scale-100 w-[120px] h-[18px]  lg:w-[373px] lg:h-[58px]">
-          <Image src="/images/footer3.png" alt="footer3" fill />
+        <Link href="https://www.thers.ac.jp/" target="_blanck" className="relative lg:scale-100 w-[120px] h-[18px]  lg:w-[373px] lg:h-[58px]">
+          <Image src="/images/thers.png" alt="thers" fill />
         </Link>
-        <Link href="/" className="relative lg:scale-100 w-[120px] h-[18px] lg:w-[300px] lg:h-[44px]">
-          <Image src="/images/footer4.png" alt="footer4" fill />
+        <Link href="https://www.nins.jp/" target="_blanck" className="relative lg:scale-100 w-[120px] h-[18px] lg:w-[300px] lg:h-[44px]">
+          <Image src="/images/nins.png" alt="nins" fill />
         </Link>
-        <Link href="/" className="relative lg:scale-100 w-[44px] h-[40px] lg:w-[88px] lg:h-[80px]">
-          <Image src="/images/footer6.png" alt="footer6" fill />
+        <Link href="https://www.soka.ac.jp/glycan/" target="_blanck" className="relative lg:scale-100 w-[44px] h-[40px] lg:w-[88px] lg:h-[80px]">
+          <Image src="/images/glycan.png" alt="glycan" fill />
         </Link>
       </div>
 
       {/* version */}
       <div className="flex items-center justify-center gap-1 max-w-full">
-        <p>Version 1.2 - </p>
-        <Link className="text-[#57369E] hover:text-[#00A7D3]" href={'/'} target="_blanck"> View Version History</Link>
+        <p>Version {footerData.version.number} - </p>
+        <Link className="text-[#57369E] hover:text-[#00A7D3]" href={footerData.version.historyHref} target="_blanck"> View Version History</Link>
       </div>
 
       {/* Copyright */}

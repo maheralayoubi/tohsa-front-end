@@ -1,14 +1,16 @@
 import React from "react";
+import "@/app/styles/hexagon.css";
 
 interface IHexagons {
     tohsa: string,
-    title: string
+    title: string,
+    className?: string
 }
 
-const Hexagons: React.FC<IHexagons> = ({ tohsa, title }) => {
+const Hexagons: React.FC<IHexagons> = ({ tohsa, title, className }) => {
     return (
-        <div className="space-y-5">
-            <div className="flex justify-center items-center space-x-2 font-poppins font-bold py-10">
+        <div className={`space-y-[10px] ${className}`}>
+            <div className="flex justify-center items-center space-x-2 font-poppins font-bold py-3 md:py-8">
                 {tohsa.split("").map((letter, index) => (
                     <div key={index} className="hexagon">
                         {letter}
@@ -16,7 +18,7 @@ const Hexagons: React.FC<IHexagons> = ({ tohsa, title }) => {
                 ))}
             </div>
 
-            <div className="block text-center text-[#484848] font-semibold text-[18px] md:text-[24px] lg:text-[32px]">
+            <div className="block text-center text-[#484848] font-semibold text-[18px] md:text-[24px] xl:text-[40px]">
                 {title}
             </div>
         </div>
