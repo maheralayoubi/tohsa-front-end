@@ -12,7 +12,7 @@ const Hexagons: React.FC<IHexagons> = ({ tohsa, title, className }) => {
         <div className={`space-y-[10px] ${className}`}>
             <div className="flex justify-center items-center space-x-2 font-poppins font-bold py-3 md:py-8">
                 {tohsa.split("").map((letter, index) => (
-                    <div key={index} className="hexagon">
+                    <div key={index} className={`variant${index + 2} hexagon `}>
                         {letter}
                     </div>
                 ))}

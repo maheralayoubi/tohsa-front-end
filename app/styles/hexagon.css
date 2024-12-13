@@ -1,3 +1,85 @@
+.variant1.hexagon,
+.variant1.hexagon:after,
+.variant1.hexagon:before {
+  background-color: #a40182;
+  border: 3px solid #a40182;
+}
+
+.variant1.hexagon:hover {
+  background-color: transparent;
+  color: #a40182;
+}
+
+/* 2 */
+.variant2.hexagon,
+.variant2.hexagon:after,
+.variant2.hexagon:before {
+  background-color: #00e3d3;
+  border: 3px solid #00e3d3;
+}
+
+.variant2.hexagon:hover {
+  background-color: transparent;
+  color: #00e3d3;
+}
+
+/* 3 */
+.variant3.hexagon,
+.variant3.hexagon:after,
+.variant3.hexagon:before {
+  background-color: #00d1d4;
+  border: 3px solid #00d1d4;
+}
+
+.variant3.hexagon:hover {
+  background-color: transparent;
+  color: #00d1d4;
+}
+
+/* 4 */
+.variant4.hexagon,
+.variant4.hexagon:after,
+.variant4.hexagon:before {
+  background-color: #00a7d3;
+  border: 3px solid #00a7d3;
+}
+
+.variant4.hexagon:hover {
+  background-color: transparent;
+  color: #00a7d3;
+}
+
+/* 5 */
+.variant5.hexagon,
+.variant5.hexagon:after,
+.variant5.hexagon:before {
+  background-color: #007fd0;
+  border: 3px solid #007fd0;
+}
+
+.variant5.hexagon:hover {
+  background-color: transparent;
+  color: #007fd0;
+}
+
+/* 6 */
+.variant6.hexagon,
+.variant6.hexagon:after,
+.variant6.hexagon:before {
+  background-color: #0065ce;
+  border: 3px solid #0065ce;
+}
+
+.variant6.hexagon:hover {
+  background-color: transparent;
+  color: #0065ce;
+}
+
+.hexagon:hover:before,
+.hexagon:hover:after {
+  background-color: transparent;
+}
+
 .hexagon {
   width: 110px;
   height: 70px;
@@ -8,26 +90,22 @@
   justify-content: center;
   cursor: pointer;
   z-index: 1;
-  background-color: #a40182;
-  border: 3px solid #a40182;
   color: white;
-  border-top: none;
-  border-bottom: none;
+  border-top: none !important;
+  border-bottom: none !important;
 }
 
 .hexagon:after {
   content: "";
   width: 60px;
   height: 60px;
-  border: 3px solid #a40182;
-  background-color: #a40182;
   position: absolute;
   top: -42%;
   left: 21.5%;
   rotate: -45deg;
   transform: skew(16deg, 16deg);
-  border-bottom: none;
-  border-left: none;
+  border-bottom: none !important;
+  border-left: none !important;
   z-index: -1;
 }
 
@@ -35,26 +113,14 @@
   content: "";
   width: 60px;
   height: 60px;
-  border: 3px solid #a40182;
-  background-color: #a40182;
   position: absolute;
   bottom: -42%;
   left: 21.5%;
   rotate: -45deg;
-  border-top: none;
-  border-right: none;
+  border-top: none !important;
+  border-right: none !important;
   transform: skew(16deg, 16deg);
   z-index: -1;
-}
-
-.hexagon:hover {
-  background-color: transparent;
-  color: #a40182;
-}
-
-.hexagon:hover:before,
-.hexagon:hover:after {
-  background-color: transparent;
 }
 
 @media (max-width: 1280px) {

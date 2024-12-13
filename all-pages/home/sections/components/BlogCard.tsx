@@ -9,18 +9,21 @@ interface IBlogCard {
 const BlogCard: React.FC<IBlogCard> = ({ data }) => {
     return (
         <div className="p-[8px] lg:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center">
-            <div className="relative rounded-[2px] hexagonImage  group-hover:scale-105 transition-all">
-                <Image
-                    src={data?.image}
-                    alt={data?.title}
-                    fill
-                    className="rounded-[2px] w-full h-full object-cover"
-                />
+            <div className="hexagonImageBorder h-[280px] w-[324px] group-hover:scale-105 transition-all">
+                <div className="relative rounded-[2px] hexagonImage">
+                    <Image
+                        src={data?.image}
+                        alt={data?.title}
+                        fill
+                        className="rounded-[2px] w-full h-full object-cover"
+                    />
+                </div>
             </div>
+
             <h3 className="font-poppins font-bold text-[16px] lg:text-[32px] my-[8px] lg:my-[20px] lg:min-h-[100px]">
                 {data?.title}
             </h3>
-            <p className="font-poppins text-[12px] lg:text-[16px] mb-[8px] text-center lg:mb-[20px] line-clamp-2 ">
+            <p className="font-poppins text-[#484848] text-[12px] lg:text-[16px] my-[8px] lg:my-[20px] text-center lg:mb-[20px] line-clamp-2 ">
                 {data?.content}
             </p>
             <Link href={`/content/${data?.id}`} className="flex items-center opacity-0 transition-all group-hover:opacity-100">
