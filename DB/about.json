@@ -1,10 +1,5 @@
 {
-  "links": [
-    "History",
-    "Team",
-    "Partners & Collaborators",
-    "FAQs"
-  ],
+  "links": ["History", "Team", "Partners & Collaborators", "FAQs"],
   "mission": "Dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
   "missionImage": "/images_db/project1.png",
   "vision": "Dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit\nconsectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio.",
@@ -35,7 +30,7 @@
         "image": "/images_db/team2.png"
       },
       {
-        "id": "2",
+        "id": "3",
         "name": "Yukie Akune-Taylor",
         "position": "Project Manager",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fr",
@@ -51,5 +46,23 @@
     "/images/footer4.png",
     "/images/footer5.png",
     "/images/footer6.png"
+  ],
+  "faqs": [
+    {
+      "id": "1",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem."
+    },
+    {
+      "id": "2",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem."
+    },
+    {
+      "id": "3",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem."
+    },
+    {
+      "id": "4",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem."
+    }
   ]
 }

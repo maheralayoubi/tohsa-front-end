@@ -2,9 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-poppins: "Poppins", sans-serif;
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -92,6 +110,11 @@ table {
   width: 50%;
 }
 
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .swiper-button-next,
 .swiper-button-prev {
   color: #57369e !important;
@@ -115,11 +138,9 @@ table {
   opacity: 0.8px;
   border-radius: 50%;
   transform: translate(-30%, 30%);
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #efcdf9 0%,
-    rgba(239, 205, 249, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%,
+      #efcdf9 0%,
+      rgba(239, 205, 249, 0) 100%);
 }
 
 .blur2 {
@@ -128,11 +149,9 @@ table {
   opacity: 0.8px;
   border-radius: 50%;
   transform: translate(30%, 30%);
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #bccff1 0%,
-    rgba(188, 207, 241, 0) 100%
-  );
+  background: radial-gradient(50% 50% at 50% 50%,
+      #bccff1 0%,
+      rgba(188, 207, 241, 0) 100%);
 }
 
 /* HTML: <div class="hexagon"></div> */
