@@ -126,6 +126,11 @@ table {
     padding-right: 100px !important;
   }
 
+  .mySwiper2 {
+    padding: 0px 0px !important;
+    padding-right: 100px !important;
+  }
+
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
