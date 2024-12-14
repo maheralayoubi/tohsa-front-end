@@ -1,68 +1,43 @@
-import Image from "next/image";
-import projectsData from "@/DB/projects.json";
 import Link from "next/link";
-import { useState } from "react";
 
-const ProjectCard = ({ image, title }: { image: string; title: string }) => {
-  return (
-    <div className="flex space-x-[20px] justify-between group hover:bg-[#00A7D3] pr-[20px] rounded-lg transition">
-      <Image
-        src={image}
-        alt={title}
-        width={210}
-        height={140}
-        className="w-[120px] h-[80px] lg:h-[140px] lg:w-[210px] rounded-lg"
-      />
-      <h2 className="font-poppins text-[14px] lg:text-[20px] font-bold text-left flex items-center flex-1 group-hover:text-white">
-        {title}
-      </h2>
-      <Image
-        src="/images/Buttons.png"
-        alt="arrow-right"
-        width={24}
-        height={24}
-        className="max-w-[24px] max-h-[24px] self-center opacity-0 group-hover:opacity-100"
-      />
-    </div>
-  );
-};
+// data
+import projectsData from "@/DB/projects.json";
+
+// copmponents
+import ProjectCard from "./components/ProjectCard";
+import Image from "next/image";
+
+
 
 const Projects = () => {
-  const [imgSrc, setImgSrc] = useState("/images/arrow-right-colored.svg");
   return (
-    <div className="flex flex-wrap xl:flex-nowrap px-[20px] lg:px-[64px] py-[40px] lg:py-[128px] xl:space-x-[40px] gap-5">
-      <div className="relative overflow-hidden w-full h-[210px] lg:h-[570px] rounded-lg flex">
-        <Image
-          src="/images/nn5.png"
-          alt="nn5"
-          fill
-          className=" w-full h-[265px] lg:h-full object-cover"
-        />
+    <section className="relative text-base lg:text-base font-normal px-5 lg:px-32 py-10 lg:py-32 space-y-10">
+      <div className="absolute -bottom-10 left-0 w-full h-48 bg-gradient-to-b from-transparent to-white -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-48 bg-gradient-to-t from-transparent to-white -z-10"></div>
+      <Image src="/images/images_downloads_hex.png" alt="hexagon" fill className=" object-cover absolute -z-20" />
+      <div className="absolute top-0 left-0 flex w-full h-full -z-20 overflow-hidden">
+        <span className="blur1"></span>
+        <span className="blur2"></span>
       </div>
-      <div className="w-full">
-        <h2 className="text-[#484848] font-poppins font-bold text-[16px] lg:text-[32px] text-left mt-[20px] lg:mt-0">
-          Glycan Profile Project
-        </h2>
-        <div className="flex flex-col space-y-[20px] my-[20px]">
-          {projectsData.map((project, index) => (
-            <Link href={`/projects/${project?.id}`} key={index}>
-              <ProjectCard image={project?.image} title={project?.title} />
-            </Link>
-          ))}
-        </div>
-        <Link
-          href="/projects"
-          onMouseEnter={() => setImgSrc("/images/arrow-right-hover.svg")}
-          onMouseLeave={() => setImgSrc("/images/arrow-right-colored.svg")}
-        >
-          <div className="flex text-[#57369E] font-poppins text-[16px] items-center justify-end cursor-pointer space-x-1 hover:text-[#00A7D3] transition-all">
-            <p>View All Projects</p>
-            <Image src={imgSrc} alt="see more" width={24} height={24} />
-          </div>
-        </Link>
+      <h2 className="text-[#57369E] font-poppins font-bold text-[16px] lg:text-[32px] text-left z-30 mt-[20px] lg:mt-0">
+        Glycan Profile Project
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 w-[100%] gap-10">
+        {projectsData.map(item => (
+          <Link href={`/projects/${item?.id}`} key={item.id}>
+            <ProjectCard image={item?.image} title={item?.title} />
+          </Link>
+        ))}
       </div>
-    </div>
+
+      <Link href="/projects" className="flex items-center">
+        <span className="mx-auto py-3 px-8 text-[#57369E] border border-[#57369E] hover:bg-[#00A7D3] hover:text-white hover:border-[#00A7D3] transition-colors duration-500">
+          View All Projects
+        </span>
+      </Link>
+    </section>
   );
 };
 
 export default Projects;
+

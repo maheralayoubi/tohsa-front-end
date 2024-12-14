@@ -1,0 +1,20 @@
+[
+  {
+    "image": "content1",
+    "title": "Precise Human Glycan Catalogue",
+    "paragraph": "Reveals information on sugar chains in the human body.",
+    "link": ""
+  },
+  {
+    "image": "content2",
+    "title": "Human Disease-related Glycan Data",
+    "paragraph": "Displays the relationship between diseases and sugar chains.",
+    "link": "glycan-data"
+  },
+  {
+    "image": "content3",
+    "title": "Glycan Biosynthesis Atlas",
+    "paragraph": "Explains how sugar chains are synthesized in the body.",
+    "link": "glycan-biosynthesis"
+  }
+]

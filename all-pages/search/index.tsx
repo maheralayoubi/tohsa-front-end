@@ -41,7 +41,6 @@ interface FilteredData {
 const Index: React.FC = () => {
     const searchParams = useSearchParams()
     const query = searchParams.get('q')
-    // const searchLengthData = searchData.article.length + searchData.studyMaterial.length + searchData.research.length + searchData.dataRecourses.length
     const [displayFilterNav, setDisplayFilterNav] = useState<boolean>(false);
     const [searchLengthData, setSearchLengthData] = useState<number>(0);
     const [filteredData, setFilteredData] = useState<FilteredData>({})
@@ -172,27 +171,27 @@ const Index: React.FC = () => {
                         <h3 className="text-xl font-bold">By Type</h3>
                         <div className="space-y-2">
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="allTypes" id="allTypes" checked={checkedTypes.allTypes} onChange={handleCheckTypes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="allTypes" id="allTypes" checked={checkedTypes.allTypes} onChange={handleCheckTypes} />
                                 <label className="cursor-pointer" htmlFor="allTypes">All</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="article" id="article" checked={checkedTypes.article} onChange={handleCheckTypes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="article" id="article" checked={checkedTypes.article} onChange={handleCheckTypes} />
                                 <label className="cursor-pointer" htmlFor="article">Article</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="studyMaterial" id="studyMaterial" checked={checkedTypes.studyMaterial} onChange={handleCheckTypes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="studyMaterial" id="studyMaterial" checked={checkedTypes.studyMaterial} onChange={handleCheckTypes} />
                                 <label className="cursor-pointer" htmlFor="studyMaterial">Study Material</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="research" id="research" checked={checkedTypes.research} onChange={handleCheckTypes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="research" id="research" checked={checkedTypes.research} onChange={handleCheckTypes} />
                                 <label className="cursor-pointer" htmlFor="research">Research</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="dataRecourses" id="dataRecourses" checked={checkedTypes.dataRecourses} onChange={handleCheckTypes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="dataRecourses" id="dataRecourses" checked={checkedTypes.dataRecourses} onChange={handleCheckTypes} />
                                 <label className="cursor-pointer" htmlFor="dataRecourses">Data Recourses</label>
                             </div>
                         </div>
@@ -209,32 +208,32 @@ const Index: React.FC = () => {
                         <h3 className="text-xl font-bold">By Time</h3>
                         <div className="space-y-2">
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="allTimes" id="allTimes" checked={checkedTimes.allTimes} onChange={handleCheckTimes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="allTimes" id="allTimes" checked={checkedTimes.allTimes} onChange={handleCheckTimes} />
                                 <label className="cursor-pointer" htmlFor="allTimes">All</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="pastHour" id="pastHour" checked={checkedTimes.pastHour} onChange={handleCheckTimes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="pastHour" id="pastHour" checked={checkedTimes.pastHour} onChange={handleCheckTimes} />
                                 <label className="cursor-pointer" htmlFor="pastHour">Past Hour</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="pastDay" id="pastDay" checked={checkedTimes.pastDay} onChange={handleCheckTimes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="pastDay" id="pastDay" checked={checkedTimes.pastDay} onChange={handleCheckTimes} />
                                 <label className="cursor-pointer" htmlFor="pastDay">Past Day</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="pastWeek" id="pastWeek" checked={checkedTimes.pastWeek} onChange={handleCheckTimes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="pastWeek" id="pastWeek" checked={checkedTimes.pastWeek} onChange={handleCheckTimes} />
                                 <label className="cursor-pointer" htmlFor="pastWeek">Past Week</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="pastMonth" id="pastMonth" checked={checkedTimes.pastMonth} onChange={handleCheckTimes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="pastMonth" id="pastMonth" checked={checkedTimes.pastMonth} onChange={handleCheckTimes} />
                                 <label className="cursor-pointer" htmlFor="pastMonth">Past Month</label>
                             </div>
 
                             <div className="space-x-2">
-                                <input type="checkbox" className="cursor-pointer" name="pastYear" id="pastYear" checked={checkedTimes.pastYear} onChange={handleCheckTimes} />
+                                <input type="checkbox" className="cursor-pointer accent-[#57369E]" name="pastYear" id="pastYear" checked={checkedTimes.pastYear} onChange={handleCheckTimes} />
                                 <label className="cursor-pointer" htmlFor="pastYear">Past Year</label>
                             </div>
                         </div>
@@ -243,9 +242,6 @@ const Index: React.FC = () => {
 
                 <section className="flex-1 w-full flex items-start justify-center text-xs lg:text-2xl font-normal px-5">
                     <div className=" w-full max-w-[920px] space-y-5 my-5 lg:space-y-10 lg:my-10">
-
-
-
                         <SearchInput />
 
                         <p>{searchLengthData} results found for <q className="font-bold">{query}</q> </p>
@@ -319,6 +315,7 @@ const Index: React.FC = () => {
 
                     </div>
                 </section>
+
             </div>
 
             <Footer />

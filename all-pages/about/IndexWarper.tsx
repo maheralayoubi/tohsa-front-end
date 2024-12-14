@@ -8,9 +8,9 @@ import TeamSection from "./sections/TeamSection";
 import PartnersSection from "./sections/PartnersSection";
 import FAQsSection from "./sections/FAQsSection";
 
-interface IIndexWarperProps {}
+interface IIndexWarperProps { }
 
-const IndexWarper = ({}: IIndexWarperProps) => {
+const IndexWarper = ({ }: IIndexWarperProps) => {
   return (
     <section className="flex flex-col lg:flex-row container">
       <Sidebar title="Mission & Vision" links={data.links} />

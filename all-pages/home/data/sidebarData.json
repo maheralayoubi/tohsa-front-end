@@ -1,35 +1,53 @@
 [
   {
+    "id": 1,
     "title": "Resources",
     "items": [
       {
-        "name": "Glycogens"
+        "id": 1,
+        "label": "Glycogens",
+        "href": "/glycogens"
       },
       {
-        "name": "Glycoproteins"
+        "id": 2,
+        "label": "Glycoproteins",
+        "href": "/glycoproteins"
       },
       {
-        "name": "Lectins"
+        "id": 3,
+        "label": "Lectins",
+        "href": "/lectins"
       },
       {
-        "name": "Glycans"
+        "id": 4,
+        "label": "Glycans",
+        "href": "/glycans"
       },
       {
-        "name": "Pathways"
+        "id": 5,
+        "label": "Pathways",
+        "href": "/pathways"
       },
       {
-        "name": "Diseases"
+        "id": 6,
+        "label": "Diseases",
+        "href": "/diseases"
       }
     ]
   },
   {
+    "id": 2,
     "title": "Standards",
     "items": [
       {
-        "name": "Ontologies"
+        "id": 1,
+        "label": "Ontologies",
+        "href": "/ontologies"
       },
       {
-        "name": "Notations"
+        "id": 2,
+        "label": "Notations",
+        "href": "/notations"
       }
     ]
   }
