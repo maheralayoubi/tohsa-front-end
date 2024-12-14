@@ -1,19 +1,18 @@
-import React from "react";
-
-// sections
+import HeroSection from "@/global-components/HeroSection";
+import IndexWarper from "./IndexWarper";
 import Footer from "@/global-components/Footer";
 
-
-const Index: React.FC = () => {
-    return (
-        <main>
-            <section className="flex items-center justify-center h-[calc(100vh-80px)] text-5xl">
-                Learn
-            </section>
-
-            <Footer />
-        </main>
-    )
-};
+function Index() {
+  return (
+    <main>
+      <HeroSection
+        title="GLYCO LEARNING"
+        imageSource="/images/learn-hero.png"
+      />
+      <IndexWarper />
+      <Footer />
+    </main>
+  );
+}
 
 export default Index;

@@ -2,9 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-poppins: "Poppins", sans-serif;
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -90,6 +108,11 @@ table {
 
 .swiper-slide {
   width: 50%;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .swiper-button-next,
