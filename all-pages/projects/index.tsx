@@ -1,14 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
 // data
 import projectsData from "@/DB/projects.json";
 
-// copmponents
-import ProjectCard from "../home/sections/components/ProjectCard";
-
 //sections 
 import Footer from "@/global-components/Footer";
-import Image from "next/image";
+import ProjectCard from "../home/sections/components/ProjectCard";
 
 
 const Index: React.FC = () => {

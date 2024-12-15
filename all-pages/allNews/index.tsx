@@ -1,12 +1,12 @@
 import React from "react";
 
-// sections
-import Footer from "@/global-components/Footer";
-
-import NewsCard from "../home/sections/components/NewsCard";
-
 // data
 import newsData from "@/DB/news.json";
+
+// sections
+import Footer from "@/global-components/Footer";
+import NewsCard from "../home/sections/components/NewsCard";
+
 
 const Index: React.FC = () => {
     return (

@@ -3,13 +3,16 @@
   "imagePageSrc": "/images/contactHero.png",
   "question": {
     "q1": "Do you have any questions or comments? Send us an ",
-    "emailLink": "mailto:info@tohsa.com",
+    "emailLink": "info@tohsa.com",
     "emailLabel": "email.",
     "q2": " We'd love to hear from you!"
   },
   "address": {
     "title": "Address",
-    "content": "Soka University is located 4km north of JR Hachioji Station, about 20 minutes by bus. Hachioji Station is about 40 minutes from Shinjuku on the JR Chuo Line or Keio Line (private railway). It is also about 45 minutes from Shin-Yokohama Station on the Tokaido Shinkansen on the JR Yokohama Line. \n 1 Chome-236 Tangimachi, Hachioji, Tokyo 192-8577, Japan \n 住所：〒192-8577 \n 東京都八王子市丹木町1-236 \n 電話：042-691-2211（代表）"
+    "content": "Soka University is located 4km north of JR Hachioji Station, about 20 minutes by bus. Hachioji Station is about 40 minutes from Shinjuku on the JR Chuo Line or Keio Line (private railway). It is also about 45 minutes from Shin-Yokohama Station on the Tokaido Shinkansen on the JR Yokohama Line. \n 1 Chome-236 Tangimachi, Hachioji, Tokyo 192-8577, Japan",
+    "addressNumber": "住所：〒192-8577",
+    "city": "東京都八王子市丹木町1-236",
+    "phone": "電話：042-691-2211（代表）"
   },
   "contactSns": {
     "title": "Contact Details",
@@ -19,7 +22,7 @@
     },
     "general": {
       "text": "General",
-      "link": "mailto:contact@tohsa.com"
+      "link": "contact@tohsa.com"
     },
     "twitter": "https://twitter.com",
     "youtube": "https://youtube.com"
