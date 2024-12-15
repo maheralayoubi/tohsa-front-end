@@ -24,7 +24,7 @@ const FAQsSection = ({ faqs }: IFAQsSectionProps) => {
         {faqs.map((faq) => (
           <div
             key={faq.id}
-            className={`p-2 lg:p-5 rounded-lg border-[1px] ${
+            className={`p-2 md:p-3 lg:p-5 rounded-lg border-[1px] ${
               openFaq === faq.id
                 ? "border-transparent bg-[#F0F5FF]"
                 : "border-[#BBBBBB]"
@@ -41,7 +41,7 @@ const FAQsSection = ({ faqs }: IFAQsSectionProps) => {
                 alt={openFaq === faq.id ? "close icon" : "arrow icon"}
                 width={24}
                 height={24}
-                className="hover:cursor-pointer rotate-90"
+                className="hover:cursor-pointer rotate-90 md:w-5 lg:w-[24px]"
                 onClick={() => toggleFaq(faq.id)}
               />
             </div>

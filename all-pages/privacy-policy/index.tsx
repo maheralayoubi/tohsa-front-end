@@ -5,7 +5,7 @@ import PrivacySection from "./sections/PrivacySection";
 const Index = () => {
   return (
     <main className="min-h-screen font-poppins">
-      <div className="flex flex-col px-[20px] py-10 lg:px-[25%] lg:py-[40px] space-y-10">
+      <div className="flex flex-col px-[20px] py-10 md:py-[60px] md:px-[30px] lg:px-[25%] lg:py-[40px] space-y-10">
         <h1 className="text-[16px] md:text-[32px] lg:text-[40px] font-bold text-[#57369E]">
           Privacy Policy
         </h1>
