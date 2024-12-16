@@ -13,22 +13,22 @@ const Hero = () => {
           <span className="cursor-pointer">Resources</span>
           <ul className="group-hover:opacity-85 opacity-0 transition-all duration-500 flex absolute -top-20 -left-72 bg-[#57369E] items-center justify-center p-5 gap-10 rounded  text-base">
             <li>
-              <Link href="/">Glycogens</Link>
+              <Link href="/">Gene</Link>
             </li>
             <li>
-              <Link href="/">Glycoproteins</Link>
+              <Link href="/">Glycan</Link>
             </li>
             <li>
-              <Link href="/">Lectins</Link>
+              <Link href="/">Glycoconjugate</Link>
             </li>
             <li>
-              <Link href="/">Glycolipids</Link>
+              <Link href="/">LectinEnzyme</Link>
             </li>
             <li>
-              <Link href="/">Glycans</Link>
+              <Link href="/">Pathway</Link>
             </li>
             <li>
-              <Link href="/">Pathways</Link>
+              <Link href="/">Vaccine/Adjuvant</Link>
             </li>
             <li>
               <Link href="/">Diseases</Link>

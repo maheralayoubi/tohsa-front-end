@@ -1,0 +1,68 @@
+{
+  "byType": "By Type",
+  "filterByTypeList": [
+    {
+      "id": "1",
+      "name": "all",
+      "label": "All"
+    },
+    {
+      "id": "2",
+      "name": "article",
+      "label": "Article"
+    },
+    {
+      "id": "3",
+      "name": "studyMaterial",
+      "label": "Study Material"
+    },
+    {
+      "id": "4",
+      "name": "research",
+      "label": "Research"
+    },
+    {
+      "id": "5",
+      "name": "dataRecourses",
+      "label": "Data Recourses"
+    }
+  ],
+  "byAuth": "By Author",
+  "placeholderByAuth": "Search Author",
+  "byTime": "By Time",
+  "filterByTimeList": [
+    {
+      "id": "1",
+      "name": "all",
+      "label": "All"
+    },
+    {
+      "id": "2",
+      "name": "pastHour",
+      "label": "Past Hour"
+    },
+    {
+      "id": "3",
+      "name": "pastDay",
+      "label": "Past Day"
+    },
+    {
+      "id": "4",
+      "name": "pastWeek",
+      "label": "Past Week"
+    },
+    {
+      "id": "5",
+      "name": "pastMonth",
+      "label": "Past Month"
+    },
+    {
+      "id": "6",
+      "name": "pastYear",
+      "label": "Past Year"
+    }
+  ],
+  "studyMaterials": "Study Materials",
+  "researches": "Researches",
+  "dataResources": "Data Resources"
+}

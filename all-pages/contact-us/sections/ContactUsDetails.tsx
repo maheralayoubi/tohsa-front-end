@@ -5,6 +5,8 @@ import "@/app/styles/hexagon.css";
 
 // data
 import contactStaticData from "../data/contactStaticData.json"
+
+// components
 import Hexagons from "@/global-components/Hexagons";
 
 
@@ -13,7 +15,7 @@ const ContactUsDetails: React.FC = () => {
         <section className="py-10 lg:py-32 px-5 space-y-10 lg:space-y-10 text-[#111118] max-w-[920px] mx-auto text-xs lg:text-2xl font-normal">
             <p>
                 {contactStaticData?.question?.q1}
-                <Link href={contactStaticData?.question?.emailLink} className="text-[#00A7D3]">{contactStaticData?.question?.emailLabel}</Link>
+                <Link href={`mailto:${contactStaticData?.question?.emailLink}`} className="text-[#00A7D3]">{contactStaticData?.question?.emailLabel}</Link>
                 {contactStaticData?.question?.q2}
             </p>
 
@@ -22,6 +24,11 @@ const ContactUsDetails: React.FC = () => {
                 {contactStaticData?.address?.content?.split("\n").map((item, index) =>
                     <p key={index}>{item}</p>
                 )}
+                <div>
+                    <p>{contactStaticData?.address?.addressNumber}</p>
+                    <p>{contactStaticData?.address?.city}</p>
+                    <p>{contactStaticData?.address?.phone}</p>
+                </div>
             </div>
 
             <div className="space-y-5">

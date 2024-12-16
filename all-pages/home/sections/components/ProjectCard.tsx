@@ -8,7 +8,7 @@ interface IProjectCard {
 
 const ProjectCard: React.FC<IProjectCard> = ({ image, title }) => {
     return (
-        <div className="p-2 lg:p-5 space-y-5 shadow-2xl bg-white rounded">
+        <div className="p-2 lg:p-5 space-y-5 shadow-xl bg-white rounded">
             <div className="relative w-full h-[180px] lg:h-[274px]">
                 <Image
                     src={image}
