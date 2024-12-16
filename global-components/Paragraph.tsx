@@ -12,7 +12,7 @@ const Paragraph = ({ title, content, children }: IParagraphProps) => {
       )}
       {content &&
         content.split("\n").map((item, index) => (
-          <p key={index} className="text-[12px] lg:text-[24px]">
+          <p key={index} className="text-[12px] md:text-[16px] lg:text-[24px]">
             {item}
           </p>
         ))}

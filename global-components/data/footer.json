@@ -13,22 +13,22 @@
     {
       "id": "1",
       "label": "ABOUT TOHSA",
-      "href": "/"
+      "href": "/about"
     },
     {
       "id": "2",
       "label": "DISCOVERY",
-      "href": "/"
+      "href": "/discovery"
     },
     {
       "id": "3",
       "label": "ACCESS",
-      "href": "/"
+      "href": "/access"
     },
     {
       "id": "4",
       "label": "LEARN",
-      "href": "/"
+      "href": "/learn"
     }
   ],
   "linksGroup_2": [

@@ -22,10 +22,13 @@ interface ITeamSectionProps {
 const TeamSection = ({ team }: ITeamSectionProps) => {
   return (
     <div id="team">
+      {/* Title and Description */}
       <Paragraph title="Team" content={team.description} />
+
+      {/* Swiper Section */}
       <Swiper
-        spaceBetween={20}
-        slidesPerView={1.2}
+        spaceBetween={16}
+        slidesPerView={1.2} // Default for small screens
         breakpoints={{
           768: { slidesPerView: 1.5 },
           1024: { slidesPerView: 1.95 },
@@ -35,23 +38,31 @@ const TeamSection = ({ team }: ITeamSectionProps) => {
         mousewheel
         keyboard
         modules={[Navigation, Mousewheel, Keyboard]}
-        className="mySwiper mt-[8px] lg:mt-[40px]"
+        className="mySwiper mt-8 lg:mt-16"
       >
         {team.teamMembers.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-[#F0F5FF] p-2 lg:p-5 rounded-lg lg:rounded-[20px] font-poppins">
-              <Image
-                src={item.image}
-                width={352}
-                height={240}
-                alt={item.name}
-              />
-              <div className="mt-2 lg:mt-5 space-y-1 lg:space-y-2 text-center">
-                <h3 className="font-semibold lg:font-bold text-[12px] lg:text-[24px]">
+            <div className="bg-[#F0F5FF] p-4 md:p-6 lg:p-8 rounded-lg lg:rounded-2xl font-poppins flex flex-col items-center">
+              {/* Team Member Image */}
+              <div className="w-full h-[200px] md:h-[240px] lg:h-[280px] rounded-md overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={352}
+                  height={280}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Team Member Details */}
+              <div className="mt-4 lg:mt-6 text-center space-y-2 lg:space-y-3">
+                <h3 className="font-semibold lg:font-bold text-sm md:text-lg lg:text-2xl text-[#111118]">
                   {item.name}
                 </h3>
-                <p className="text-[12px] lg:text-[16px]">{item.position}</p>
-                <p className="text-[12px] lg:text-[16px] text-[#484848]">
+                <p className="text-xs md:text-sm lg:text-base text-[#111118]">
+                  {item.position}
+                </p>
+                <p className="text-xs md:text-sm lg:text-base text-[#484848]">
                   {item.description}
                 </p>
               </div>

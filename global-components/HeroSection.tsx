@@ -16,7 +16,7 @@ const HeroSection = ({ title, imageSource }: IHeroSectionProps) => {
           className="object-cover"
         />
         <div className="w-[84px] max-w-[400px] absolute left-[10%] top-[30%]">
-          <h1 className="text-[24px] lg:text-[80px] text-white font-poppins font-bold text-wrap">
+          <h1 className="text-[24px] md:text-[40px] lg:text-[80px] text-white font-poppins font-bold text-wrap">
             {title}
           </h1>
         </div>
