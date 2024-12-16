@@ -76,6 +76,7 @@ const Footer = () => {
       <div className="flex items-center justify-center gap-1 max-w-full">
         <p>Version {footerData.version.number} - </p>
         <Link className="text-[#57369E] hover:text-[#00A7D3]" href={footerData.version.historyHref} target="_blanck"> View Version History</Link>
+        <Link className="text-[#57369E] hover:text-[#00A7D3] ml-5" href={footerData.privacy} target="_blanck">privacy-policy</Link>
       </div>
 
       {/* Copyright */}

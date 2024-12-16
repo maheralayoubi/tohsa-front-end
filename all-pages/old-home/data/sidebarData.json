@@ -1,40 +1,73 @@
 [
   {
+    "id": 1,
     "title": "Resources",
     "items": [
       {
         "id": 1,
-        "label": "Glycogens",
-        "href": "/glycogens"
+        "label": "Gene",
+        "href": "/"
       },
       {
         "id": 2,
-        "label": "Glycoproteins",
-        "href": "/glycoproteins"
+        "label": "Glycan",
+        "href": "/"
       },
       {
         "id": 3,
-        "label": "Lectins",
-        "href": "/lectins"
+        "label": "Glycoconjugate",
+        "href": "/"
       },
       {
         "id": 4,
-        "label": "Glycans",
-        "href": "/glycans"
+        "label": "LectinEnzyme",
+        "href": "/"
       },
       {
         "id": 5,
-        "label": "Pathways",
-        "href": "/pathways"
+        "label": "Pathway",
+        "href": "/"
       },
       {
         "id": 6,
-        "label": "Diseases",
-        "href": "/diseases"
+        "label": "Vaccine/Adjuvant",
+        "href": "/"
+      },
+      {
+        "id": 7,
+        "label": "Disease",
+        "href": "/"
       }
     ]
   },
   {
+    "id": 2,
+    "title": "Tools",
+    "items": [
+      {
+        "id": 1,
+        "label": "Tool A",
+        "href": "/"
+      },
+      {
+        "id": 2,
+        "label": "Tool B",
+        "href": "/"
+      },
+      {
+        "id": 3,
+        "label": "Tool C",
+        "href": "/"
+      },
+      {
+        "id": 4,
+        "label": "Tool D",
+        "href": "/"
+      }
+    ]
+  },
+  {
+    "id": 3,
     "title": "Standards",
     "items": [
       {
@@ -45,7 +78,7 @@
       {
         "id": 2,
         "label": "Notations",
-        "href": "/notations"
+        "href": "/"
       }
     ]
   }

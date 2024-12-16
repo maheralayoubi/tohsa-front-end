@@ -4,7 +4,7 @@
 import SideBarSubItem from "./components/SideBarSubItem";
 
 // data
-import sidebarData from "@/all-pages/home/data/sidebarData.json";
+import sidebarData from "../data/sidebarData.json";
 
 interface ISideBarProps {
   displaySidebar: boolean;
