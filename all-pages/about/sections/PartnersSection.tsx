@@ -5,22 +5,34 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
+import { useState } from "react";
 
 interface IPartnersSectionProps {
   partners: string;
+  partnerLocations: { id: number; name: string; iframeSrc: string }[];
 }
 
-const PartnersSection = ({ partners }: IPartnersSectionProps) => {
+const PartnersSection = ({
+  partners,
+  partnerLocations,
+}: IPartnersSectionProps) => {
+  const [selectedLocation, setSelectedLocation] = useState<string>(
+    partnerLocations[0].iframeSrc
+  );
+
   return (
     <div id="partners-&-collaborators">
+      {/* Section Title */}
       <Paragraph title="Partners & Collaborators" content={partners} />
+
+      {/* Swiper Component */}
       <Swiper
-        spaceBetween={10}
-        slidesPerView={1.5}
+        spaceBetween={20} // Default spacing
         breakpoints={{
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 2.9 },
-          1500: { slidesPerView: 2, spaceBetween: 40 },
+          640: { slidesPerView: 1, spaceBetween: 20 }, // Small screens
+          768: { slidesPerView: 2, spaceBetween: 20 }, // Tablets
+          1024: { slidesPerView: 3, spaceBetween: 30 }, // Medium screens
+          1280: { slidesPerView: 4, spaceBetween: 40 }, // Large screens
         }}
         navigation
         mousewheel
@@ -28,24 +40,33 @@ const PartnersSection = ({ partners }: IPartnersSectionProps) => {
         modules={[Navigation, Mousewheel, Keyboard]}
         className="mySwiper mt-2 lg:mt-[40px]"
       >
-        {[...Array(6)].map((_, index) => (
-          <SwiperSlide key={index} className="h-20 relative">
+        {partnerLocations.map((partner, index) => (
+          <SwiperSlide
+            key={partner.id}
+            className="flex justify-center items-center cursor-pointer"
+            onClick={() => setSelectedLocation(partner.iframeSrc)} // Update iframe on click
+          >
             <Image
               src={`/images/footer${index + 1}.png`}
-              alt={`footer ${index + 1}`}
-              height={40}
+              alt={partner.name}
+              height={60}
               width={240}
-              className="object-contain self-center max-h-[60px] lg:max-h-[120px] "
+              className="object-contain max-h-[60px] lg:max-h-[120px] w-auto"
             />
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Google Map Iframe */}
       <div className="w-[100%] h-[300px] lg:h-[460px] mt-2 lg:mt-[40px]">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6014443.780071412!2d142.8754536704671!3d35.45247405148201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60191e54e1f331d7%3A0x1e7ff0811c66662d!2z2KzYp9mF2LnYqSDYs9mI2YPYpw!5e0!3m2!1sar!2s!4v1733423808349!5m2!1sar!2s"
+          src={selectedLocation}
           width="100%"
           height="100%"
           loading="lazy"
+          title="Partner Location Map"
+          style={{ border: 0 }}
+          allowFullScreen
         ></iframe>
       </div>
     </div>
