@@ -8,7 +8,7 @@ interface IBlogCard {
 
 const BlogCard: React.FC<IBlogCard> = ({ data }) => {
     return (
-        <div className="p-[8px] lg:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center space-y-2 lg:space-y-5">
+        <div className="p-[8px] lg:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center space-y-2 lg:space-y-5 lg:hover:bg-[#F0F5FF]">
             <div className="hexagonImageBorder h-[280px] w-[324px] lg:group-hover:scale-105 transition-all">
                 <div className="relative rounded-[2px] hexagonImage">
                     <Image

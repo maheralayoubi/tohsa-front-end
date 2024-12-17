@@ -7,7 +7,7 @@ import projectsData from "@/DB/projects.json";
 
 //sections 
 import Footer from "@/global-components/Footer";
-import ProjectCard from "../home/sections/components/ProjectCard";
+import ProjectCard from "../home-4/sections/components/ProjectCard";
 
 
 const Index: React.FC = () => {

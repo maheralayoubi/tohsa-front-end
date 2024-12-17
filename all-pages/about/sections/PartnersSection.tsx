@@ -9,7 +9,7 @@ import { useState } from "react";
 
 interface IPartnersSectionProps {
   partners: string;
-  partnerLocations: { id: number; name: string; iframeSrc: string }[];
+  partnerLocations: { id: number; name: string; iframeSrc: string, imageSrc: string }[];
 }
 
 const PartnersSection = ({
@@ -40,14 +40,14 @@ const PartnersSection = ({
         modules={[Navigation, Mousewheel, Keyboard]}
         className="mySwiper mt-2 lg:mt-[40px]"
       >
-        {partnerLocations.map((partner, index) => (
+        {partnerLocations.map((partner) => (
           <SwiperSlide
             key={partner.id}
             className="flex justify-center items-center cursor-pointer"
             onClick={() => setSelectedLocation(partner.iframeSrc)} // Update iframe on click
           >
             <Image
-              src={`/images/footer${index + 1}.png`}
+              src={partner.imageSrc}
               alt={partner.name}
               height={60}
               width={240}

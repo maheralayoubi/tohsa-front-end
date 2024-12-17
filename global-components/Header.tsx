@@ -10,7 +10,7 @@ import { MobileNavItem, MobileSubNavItem } from "./MobileNavItem";
 
 // data
 import headerData from "./data/header.json";
-import sidebarData from "../all-pages/home/data/sidebarData.json";
+import sidebarData from "@/DB/sidebarData.json";
 
 const Header = () => {
   const [displayNav, setDisplayNav] = useState<boolean>(false);
@@ -78,16 +78,14 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${
-          displayNav ? "block" : "hidden"
-        }`}
+        className={`overlay w-[100%] h-[100%] fixed top-0 left-0 bg-black opacity-[50%] z-40 ${displayNav ? "block" : "hidden"
+          }`}
         onClick={toggleNav}
       />
 
       <div
-        className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${
-          displayNav ? "translate-x-0" : "translate-x-[-100%]"
-        }`}
+        className={`z-50 lg:hidden fixed top-0 left-0 w-[85%] h-full bg-white text-black px-[16px] pt-[20px] transition-transform rounded-r-[4px] ${displayNav ? "translate-x-0" : "translate-x-[-100%]"
+          }`}
       >
         <div className="block w-100 relative h-[24px]">
           <Image
@@ -139,16 +137,14 @@ const Header = () => {
                     alt="toggle arrow"
                     width={16}
                     height={16}
-                    className={`transition-transform ${
-                      openSections === index ? "-rotate-90" : "rotate-90"
-                    }`}
+                    className={`transition-transform ${openSections === index ? "-rotate-90" : "rotate-90"
+                      }`}
                   />
                 </div>
                 {/* Collapsible Content */}
                 <ul
-                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${
-                    openSections === index ? "max-h-[500px]" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 mb-[16px] ${openSections === index ? "max-h-[500px]" : "max-h-0"
+                    }`}
                 >
                   {item.items.map((item) => (
                     <MobileSubNavItem

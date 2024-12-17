@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="relative md:pt-0 flex items-start justify-center h-[280px] md:h-[700px]">
       {/* Background Image */}
-      <div className="relative md:pt-0 w-full h-full bg-slate-600">
+      <div className="relative md:pt-0 w-full h-full">
         <Image
           src="/images/background-hero-2.png"
           alt="hero photo"

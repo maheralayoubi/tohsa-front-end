@@ -15,7 +15,7 @@ import "swiper/css/pagination";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 
 // components
-import NewsCard from "./components/NewsCard";
+import NewsCard from "@/global-components/NewsCard";
 import ReadMoreBtn from "@/global-components/ReadMoreBtn";
 
 const LatestUpdates = () => {

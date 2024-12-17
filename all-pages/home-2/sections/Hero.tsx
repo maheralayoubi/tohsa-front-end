@@ -4,11 +4,11 @@ import "@/app/styles/hexagon.css";
 import Hexagons from "@/global-components/Hexagons";
 import Link from "next/link";
 
-import SidebarData from "../data/sidebarData.json"
+import SidebarData from "@/DB/sidebarData.json"
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-[400px] md:h-screen md:pt-0">
+    <div className="relative w-full h-[400px] md:h-screen md:min-h-[1000px] md:pt-0">
       <Hexagons title="Total Human Saccharide Atlas" tohsa="TOHSA" className=" z-40 pt-5 " />
       <div className=" absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-full hidden lg:grid grid-cols-3 max-w-screen-xl">
         {SidebarData.map(item => (

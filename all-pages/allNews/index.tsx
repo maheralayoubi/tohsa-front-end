@@ -5,7 +5,7 @@ import newsData from "@/DB/news.json";
 
 // sections
 import Footer from "@/global-components/Footer";
-import NewsCard from "../home/sections/components/NewsCard";
+import NewsCard from "@/global-components/NewsCard";
 
 
 const Index: React.FC = () => {
