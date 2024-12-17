@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import data from "@/DB/about.json";
+import team from '@/DB/profile.json'
 import Sidebar from "@/global-components/Sidebar";
 import MissionSection from "./sections/MissionSection";
 import HistorySection from "./sections/HistorySection";
@@ -13,7 +14,7 @@ interface IIndexWarperProps {}
 const IndexWarper = ({}: IIndexWarperProps) => {
   return (
     <section className="flex flex-col lg:flex-row lg:container">
-      <Sidebar title="Mission & Vision" links={data.links} />
+      <Sidebar links={data.links} />
       <div className="space-y-10 lg:space-y-[128px] py-10 px-5 md:py-[60px] md:px-[30px] lg:py-20 lg:px-10 max-w-[920px] text-[#111118] mx-auto text-sm lg:text-2xl font-normal container">
         <MissionSection
           mission={data.mission}
@@ -26,7 +27,7 @@ const IndexWarper = ({}: IIndexWarperProps) => {
           funding={data.funding}
           milestones={data.milestones}
         />
-        <TeamSection team={data.team} />
+        <TeamSection team={team} description={data.team.description}/>
         <PartnersSection partners={data.partners} />
         <FAQsSection faqs={data.faqs} />
       </div>

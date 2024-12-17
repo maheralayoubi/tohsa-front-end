@@ -1,9 +1,51 @@
+"use client";
+import { useState, useEffect } from "react";
+
 interface ISidebarProps {
-  title: string;
   links: string[];
 }
 
-const Sidebar = ({ links, title }: ISidebarProps) => {
+const Sidebar = ({ links }: ISidebarProps) => {
+  const [activeSection, setActiveSection] = useState<string>(
+    links[0].toLowerCase().split(" ").join("-")
+  );
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+
+    // Observe all sections with matching IDs
+    links.forEach((link) => {
+      const id = link.toLowerCase().split(" ").join("-");
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+
+    // Cleanup observer on unmount
+    return () => {
+      links.forEach((link) => {
+        const id = link.toLowerCase().split(" ").join("-");
+        const section = document.getElementById(id);
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, [links]);
+
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -16,15 +58,21 @@ const Sidebar = ({ links, title }: ISidebarProps) => {
 
   return (
     <div className="sidebar hidden lg:block lg:w-[30%] px-5 lg:px-[20px] py-[80px] sticky top-20 self-start container text-nowrap">
-      <h3 className="underline-offset-8 underline decoration-2 decoration-[#57369E] font-bold text-[20px]">
-        {title}
-      </h3>
       <ul className="space-y-5 mt-5">
         {links.map((link, index) => {
           const id = link.toLowerCase().split(" ").join("-");
           return (
             <li key={index}>
-              <button onClick={() => handleScroll(id)}>{link}</button>
+              <button
+                onClick={() => handleScroll(id)}
+                className={`${
+                  activeSection === id
+                    ? "underline-offset-8 underline decoration-2 decoration-[#57369E] font-bold text-xl"
+                    : "font-normal text-black text-xl"
+                }`}
+              >
+                {link}
+              </button>
             </li>
           );
         })}
