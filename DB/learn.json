@@ -1,9 +1,5 @@
 {
-  "links": [
-    "Study Material",
-    "Data Resources",
-    "Video Tutorial"
-  ],
+  "links": ["Study Material", "Data Resources", "Video Tutorial"],
   "intro": "Welcome to the earning hub, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
   "questions": [
     {
@@ -59,5 +55,5 @@
       "link": "/"
     }
   ],
-  "video": "/images_db/about1.png"
+  "video": "/images/about1.png"
 }

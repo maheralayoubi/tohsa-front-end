@@ -141,7 +141,6 @@ const FilterSideBar: React.FC<IFilterSideBar> = ({ displayFilterNav, setFiltered
 
         setFilteredData(filteredData);
         setSearchLengthData(count)
-        console.log("sss")
     }, [checkedTypes, setFilteredData, setSearchLengthData]);
 
     return (
