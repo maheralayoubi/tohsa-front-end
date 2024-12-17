@@ -12,12 +12,12 @@ interface IIndexWarperProps {}
 const IndexWarper = ({}: IIndexWarperProps) => {
   return (
     <section className="flex flex-col lg:flex-row lg:container">
-      <Sidebar title="Study Material" links={data.links} />
+      <Sidebar links={data.links} />
       <div className="space-y-10 lg:space-y-[128px] py-10 px-5 md:py-[60px] md:px-[30px] lg:py-20 lg:px-10 max-w-[920px] text-[#111118] mx-auto text-sm lg:text-2xl font-normal container">
         <Paragraph content={data.intro} />
 
         {/* Study Material */}
-        <div className="space-y-5 lg:space-y-10">
+        <div className="space-y-5 lg:space-y-10" id="study-material">
           <Paragraph title="Study Material" />
           <ul className="space-y-5">
             {data.questions.map((question, index) => (

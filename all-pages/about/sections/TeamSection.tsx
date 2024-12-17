@@ -5,25 +5,35 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
+import Link from "next/link";
 
-interface ITeamSectionProps {
-  team: {
-    description: string;
-    teamMembers: {
-      id: string;
-      name: string;
-      position: string;
-      description: string;
-      image: string;
-    }[];
-  };
+interface Contact {
+  email: string;
+  twitter: string;
+  facebook: string;
+  linkedin: string;
 }
 
-const TeamSection = ({ team }: ITeamSectionProps) => {
+interface User {
+  id: string;
+  userName: string;
+  image: string;
+  work: string;
+  shortDiscription: string;
+  biography: string;
+  contact: Contact;
+}
+
+interface ITeam {
+  description: string;
+  team: User[];
+}
+
+const TeamSection = ({ team, description }: ITeam) => {
   return (
     <div id="team">
       {/* Title and Description */}
-      <Paragraph title="Team" content={team.description} />
+      <Paragraph title="Team" content={description} />
 
       {/* Swiper Section */}
       <Swiper
@@ -40,14 +50,14 @@ const TeamSection = ({ team }: ITeamSectionProps) => {
         modules={[Navigation, Mousewheel, Keyboard]}
         className="mySwiper mt-8 lg:mt-16"
       >
-        {team.teamMembers.map((item) => (
+        {team.map((item) => (
           <SwiperSlide key={item.id}>
             <div className="bg-[#F0F5FF] p-4 md:p-6 lg:p-8 rounded-lg lg:rounded-2xl font-poppins flex flex-col items-center">
               {/* Team Member Image */}
               <div className="w-full h-[200px] md:h-[240px] lg:h-[280px] rounded-md overflow-hidden">
                 <Image
                   src={item.image}
-                  alt={item.name}
+                  alt={item.userName}
                   width={352}
                   height={280}
                   className="w-full h-full object-cover"
@@ -55,17 +65,19 @@ const TeamSection = ({ team }: ITeamSectionProps) => {
               </div>
 
               {/* Team Member Details */}
-              <div className="mt-4 lg:mt-6 text-center space-y-2 lg:space-y-3">
-                <h3 className="font-semibold lg:font-bold text-sm md:text-lg lg:text-2xl text-[#111118]">
-                  {item.name}
-                </h3>
-                <p className="text-xs md:text-sm lg:text-base text-[#111118]">
-                  {item.position}
-                </p>
-                <p className="text-xs md:text-sm lg:text-base text-[#484848]">
-                  {item.description}
-                </p>
-              </div>
+              <Link href={`profile/${item.id}`}>
+                <div className="mt-4 lg:mt-6 text-center space-y-2 lg:space-y-3">
+                  <h3 className="font-semibold lg:font-bold text-sm md:text-lg lg:text-2xl text-[#111118]">
+                    {item.userName}
+                  </h3>
+                  <p className="text-xs md:text-sm lg:text-base text-[#111118]">
+                    {item.work}
+                  </p>
+                  <p className="text-xs md:text-sm lg:text-base text-[#484848]">
+                    {item.shortDiscription}
+                  </p>
+                </div>
+              </Link>
             </div>
           </SwiperSlide>
         ))}

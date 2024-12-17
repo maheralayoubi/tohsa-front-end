@@ -13,7 +13,7 @@ function MissionSection({
   vision,
 }: IMissionSectionProps) {
   return (
-    <div className="space-y-5 lg:space-y-10">
+    <div className="space-y-5 lg:space-y-10" id="mission-&-vision">
       <h2 className="font-bold text-[16px] lg:text-[40px]">Mission & Vision</h2>
       <Paragraph title="Mission" content={mission} />
       <div className="vision flex flex-col lg:flex-row space-y-5 lg:space-y-0 lg:space-x-10">

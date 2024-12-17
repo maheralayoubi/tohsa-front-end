@@ -2,7 +2,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 
 // data
-import profileData from "./data/profile.json"
+import profileData from "@/DB/profile.json"
 
 
 // sections
