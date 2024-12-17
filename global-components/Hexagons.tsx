@@ -19,7 +19,7 @@ const Hexagons: React.FC<IHexagons> = ({ tohsa, title, className, variant }) => 
                 ))}
             </div>
 
-            <div className="block text-center text-[#484848] font-semibold text-[18px] md:text-[24px] xl:text-[40px]">
+            <div className="block text-center text-[#484848] font-semibold text-[14px] md:text-[24px] xl:text-[32px]">
                 {title}
             </div>
         </div>

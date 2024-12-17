@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "title": "Resources",
+    "items": [
+      {
+        "id": 1,
+        "label": "Gene",
+        "href": "/"
+      },
+      {
+        "id": 2,
+        "label": "Glycan",
+        "href": "/"
+      },
+      {
+        "id": 3,
+        "label": "Glycoconjugate",
+        "href": "/"
+      },
+      {
+        "id": 4,
+        "label": "LectinEnzyme",
+        "href": "/"
+      },
+      {
+        "id": 5,
+        "label": "Pathway",
+        "href": "/"
+      },
+      {
+        "id": 6,
+        "label": "Vaccine/Adjuvant",
+        "href": "/"
+      },
+      {
+        "id": 7,
+        "label": "Disease",
+        "href": "/"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Tools",
+    "items": [
+      {
+        "id": 1,
+        "label": "Tool A",
+        "href": "/"
+      },
+      {
+        "id": 2,
+        "label": "Tool B",
+        "href": "/"
+      },
+      {
+        "id": 3,
+        "label": "Tool C",
+        "href": "/"
+      },
+      {
+        "id": 4,
+        "label": "Tool D",
+        "href": "/"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Standards",
+    "items": [
+      {
+        "id": 1,
+        "label": "Ontologies",
+        "href": "/ontologies"
+      },
+      {
+        "id": 2,
+        "label": "Notations",
+        "href": "/"
+      }
+    ]
+  }
+]

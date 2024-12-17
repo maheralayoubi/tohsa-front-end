@@ -141,16 +141,16 @@
 
 @media (max-width: 768px) {
   .hexagon {
-    width: 60px;
-    height: 40px;
+    width: 43px;
+    height: 28px;
     font-size: 30px;
   }
   .hexagon:before {
-    width: 32px;
-    height: 33px;
+    width: 22px;
+    height: 23px;
   }
   .hexagon:after {
-    width: 32px;
-    height: 33px;
+    width: 22px;
+    height: 23px;
   }
 }
