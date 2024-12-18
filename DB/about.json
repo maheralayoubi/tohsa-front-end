@@ -7,13 +7,13 @@
     "FAQs"
   ],
   "mission": "Dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit.\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
-  "missionImage": "/images_db/project1.png",
+  "missionImage": "/images/project1.png",
   "vision": "Dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit\nconsectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio.",
-  "visionImage": "/images_db/visionImage.png",
+  "visionImage": "/images/visionImage.png",
   "historyImages": {
-    "mainImages": "/images_db/about1.png",
-    "image2": "/images_db/about2.png",
-    "lastImage": "/images_db/about3.png"
+    "mainImages": "/images/about1.png",
+    "image2": "/images/about2.png",
+    "lastImage": "/images/about3.png"
   },
   "funding": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
   "milestones": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis Vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem.",
