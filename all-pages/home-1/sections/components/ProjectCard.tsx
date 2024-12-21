@@ -17,7 +17,7 @@ const ProjectCard = ({ image, title }: { image: string; title: string }) => {
                 </span>
             </h2>
             <Image
-                src="/images/Buttons.png"
+                src="/images/icons/Buttons.png"
                 alt="arrow-right"
                 width={24}
                 height={24}

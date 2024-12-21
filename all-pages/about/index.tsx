@@ -5,7 +5,7 @@ import Footer from "@/global-components/Footer";
 function Index() {
   return (
     <main>
-      <HeroSection title="ABOUT TOHSA" imageSource="/images/about-hero.png" />
+      <HeroSection title="ABOUT TOHSA" imageSource="/images/hero/about-hero.png" />
       <IndexWarper />
       <Footer />
     </main>

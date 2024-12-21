@@ -1,7 +1,7 @@
 import React from "react";
 
 // data
-import ontotologiesData from "./data/ontotologies.json"
+import ontotologiesData from "@/DB/ontotologies.json"
 
 // sections
 import Footer from "@/global-components/Footer";
@@ -13,7 +13,7 @@ import ReadMoreBtn from "@/global-components/ReadMoreBtn";
 const Index = () => {
     return (
         <main>
-            <OntotologiesHero title="Ontologies" image="/images/OntotologiesHero.png" />
+            <OntotologiesHero title="Ontologies" image="/images/hero/OntotologiesHero.png" />
             <section className="py-10 lg:py-32 px-5 space-y-10 lg:space-y-20 text-[#111118] max-w-5xl mx-auto">
                 {ontotologiesData?.map(item =>
                     <div key={item.id} className="space-y-5">

@@ -26,7 +26,7 @@ const Index: React.FC<ProfielPage> = ({ id }) => {
 
     return (
         <main>
-            <ProfileHero image="/images/profileHero.png" title="Profile" />
+            <ProfileHero image="/images/hero/profileHero.png" title="Profile" />
             <ProfileDetails data={data} />
             <Footer />
         </main>

@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="absolute top-10 left-0 w-full h-[45%] bg-gradient-to-t from-transparent to-white -z-10"></div>
       <div className=" absolute top-10 lg:top-10 left-0 w-full h-full -z-20">
         <Image
-          src="/images/background-hero-2.png"
+          src="/images/hero/background-hero-2.png"
           alt="hero photo"
           fill
           className="object-cover"

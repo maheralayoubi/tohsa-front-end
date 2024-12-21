@@ -18,15 +18,15 @@ const Blogs = () => {
         ))}
       </div>
       <div
-        className="bg-fixed bg-[url('/images/genetics-1.png')] bg-no-repeat w-full h-full absolute top-0 left-0 z-0"
+        className="bg-fixed bg-[url('/images/media/genetics-1.png')] bg-no-repeat w-full h-full absolute top-0 left-0 z-0"
         style={{ backgroundPosition: "0% bottom, 0% bottom" }}
       ></div>
       <div
-        className="bg-fixed bg-[url('/images/genetics-2.png')] bg-no-repeat bg-right w-full h-full absolute top-0 right-0 z-0"
+        className="bg-fixed bg-[url('/images/media/genetics-2.png')] bg-no-repeat bg-right w-full h-full absolute top-0 right-0 z-0"
         style={{ backgroundPosition: "88%, 10%" }}
       ></div>
       <Image
-        src="/images/hex-vector.svg"
+        src="/images/media/hex-vector.svg"
         alt="hex-vector"
         width={1385}
         height={1920}

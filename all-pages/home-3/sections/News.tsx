@@ -7,9 +7,9 @@ const News = () => {
       <div className="flex justify-between">
         <p>News</p>
         <div className="flex justify-between items-center space-x-[16px]">
-          <Image src="/images/x.svg" alt="x logo" width={24} height={24} />
+          <Image src="/images/icons/x.svg" alt="x logo" width={24} height={24} />
           <Image
-            src="/images/youtube.svg"
+            src="/images/icons/youtube.svg"
             alt="youtube logo"
             width={24}
             height={24}

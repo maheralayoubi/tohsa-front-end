@@ -20,7 +20,7 @@ export const MobileNavItem: React.FC<IMobileNavItem> = ({
       <Link href={href} className="flex justify-between w-full">
         <span>{label}</span>
         <Image
-          src="/images/arrow-right.svg"
+          src="/images/icons/arrow-right.svg"
           alt="arrow right"
           width={16}
           height={16}
@@ -47,7 +47,7 @@ export const MobileSubNavItem: React.FC<IMobileSubNavItem> = ({
       onClick={toggle}
     >
       <Link href={href} className="flex space-x-2">
-        <Image src="/images/setting.svg" alt="setting" width={24} height={24} />
+        <Image src="/images/icons/setting.svg" alt="setting" width={24} height={24} />
         <span>{label}</span>
       </Link>
     </li>

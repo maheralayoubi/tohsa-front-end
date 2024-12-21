@@ -35,13 +35,13 @@ const ProfileDetails: React.FC<IProfileDetails> = ({ data }) => {
                 <Link href={`mailto:${data?.contact?.email}`} className="text-[#00A7D3] block">{data?.contact?.email}</Link>
                 <div className="flex items-center justify-start gap-5">
                     <Link href={data?.contact?.twitter}>
-                        <Image src="/images/x.svg" alt="x" width={24} height={24} />
+                        <Image src="/images/icons/x.svg" alt="x" width={24} height={24} />
                     </Link>
                     <Link href={data?.contact?.facebook}>
-                        <Image src="/images/facebook.svg" alt="facebook" width={24} height={24} />
+                        <Image src="/images/icons/facebook.svg" alt="facebook" width={24} height={24} />
                     </Link>
                     <Link href={data?.contact?.linkedin}>
-                        <Image src="/images/linkedin.svg" alt="linkedin" width={24} height={24} />
+                        <Image src="/images/icons/linkedin.svg" alt="linkedin" width={24} height={24} />
                     </Link>
                 </div>
             </div>

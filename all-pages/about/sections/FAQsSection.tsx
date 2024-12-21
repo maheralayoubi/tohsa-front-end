@@ -24,19 +24,18 @@ const FAQsSection = ({ faqs }: IFAQsSectionProps) => {
         {faqs.map((faq) => (
           <div
             key={faq.id}
-            className={`p-2 md:p-3 lg:p-5 rounded-lg border-[1px] ${
-              openFaq === faq.id
+            className={`p-2 md:p-3 lg:p-5 rounded-lg border-[1px] ${openFaq === faq.id
                 ? "border-transparent bg-[#F0F5FF]"
                 : "border-[#BBBBBB]"
-            } font-bold text-[20px] lg:text-[24px]`}
+              } font-bold text-[20px] lg:text-[24px]`}
           >
             <div className="flex justify-between items-center">
               <h3 className="text-[16px] lg:text-[24px]">Question {faq.id}</h3>
               <Image
                 src={
                   openFaq === faq.id
-                    ? "images/close.svg"
-                    : "images/arrow-right.svg"
+                    ? "images/icons/close.svg"
+                    : "images/icons/arrow-right.svg"
                 }
                 alt={openFaq === faq.id ? "close icon" : "arrow icon"}
                 width={24}

@@ -26,7 +26,7 @@ import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 const Projects = () => {
   return (
     <section className="relative text-base lg:text-base font-normal px-5 lg:px-32 py-10 lg:py-32 space-y-10">
-      <Image src="/images/hexagonBg.png" unoptimized alt="hexagon" fill className=" object-cover absolute -z-20" />
+      <Image src="/images/media/hexagonBg.png" unoptimized alt="hexagon" fill className=" object-cover absolute -z-20" />
       <div className="absolute top-0 left-0 flex w-full h-full -z-20 overflow-hidden">
       </div>
       <div className="flex items-center justify-between">

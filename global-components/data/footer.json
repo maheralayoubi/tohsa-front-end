@@ -18,12 +18,12 @@
     {
       "id": "2",
       "label": "DISCOVERY",
-      "href": "/discovery"
+      "href": "/"
     },
     {
       "id": "3",
       "label": "ACCESS",
-      "href": "/access"
+      "href": "/"
     },
     {
       "id": "4",
@@ -52,5 +52,5 @@
     "number": "1.2",
     "historyHref": "/"
   },
-  "privacy": "privacy-policy"
+  "privacy": "/privacy-policy"
 }

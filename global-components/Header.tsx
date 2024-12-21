@@ -33,7 +33,7 @@ const Header = () => {
           {/* Menu Icon for Mobile */}
           <div className="flex items-center space-x-5">
             <Image
-              src="/images/menu.svg"
+              src="/images/icons/menu.svg"
               alt="menu"
               width={24}
               height={24}
@@ -42,7 +42,7 @@ const Header = () => {
             />
             <Link href="/">
               <Image
-                src="/images/Logo.svg"
+                src="/images/universities/Logo.svg"
                 alt="logo"
                 width={220}
                 height={64}
@@ -89,7 +89,7 @@ const Header = () => {
       >
         <div className="block w-100 relative h-[24px]">
           <Image
-            src="/images/close.svg"
+            src="/images/icons/close.svg"
             alt="close"
             width={24}
             height={24}
@@ -100,7 +100,7 @@ const Header = () => {
 
         <div className="flex justify-between items-center mb-8">
           <Image
-            src="/images/Logo.svg"
+            src="/images/universities/Logo.svg"
             alt="logo"
             width={150}
             height={50}
@@ -133,7 +133,7 @@ const Header = () => {
                 >
                   <span>{item.title}</span>
                   <Image
-                    src="/images/arrow-right.svg"
+                    src="/images/icons/arrow-right.svg"
                     alt="toggle arrow"
                     width={16}
                     height={16}

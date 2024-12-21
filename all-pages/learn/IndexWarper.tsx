@@ -7,9 +7,9 @@ import Image from "next/image";
 import HoverImageLink from "./sections/HoverImageLink";
 import ResourceLink from "./sections/ResourceLink";
 
-interface IIndexWarperProps {}
+interface IIndexWarperProps { }
 
-const IndexWarper = ({}: IIndexWarperProps) => {
+const IndexWarper = ({ }: IIndexWarperProps) => {
   return (
     <section className="flex flex-col lg:flex-row lg:container">
       <Sidebar links={data.links} />
@@ -25,8 +25,8 @@ const IndexWarper = ({}: IIndexWarperProps) => {
                 key={index}
                 title={question.title}
                 link={question.link}
-                defaultImage="/images/arrow-right-purple.svg"
-                hoverImage="/images/arrow-right-white.svg"
+                defaultImage="/images/icons/arrow-right-purple.svg"
+                hoverImage="/images/icons/arrow-right-white.svg"
               />
             ))}
           </ul>
@@ -41,8 +41,8 @@ const IndexWarper = ({}: IIndexWarperProps) => {
               title={resource.title}
               description={resource.description}
               link={resource.link}
-              defaultImage="/images/arrow-right-colored.svg"
-              hoverImage="/images/arrow-right-hover.svg"
+              defaultImage="/images/icons/arrow-right-colored.svg"
+              hoverImage="/images/icons/arrow-right-hover.svg"
             />
           ))}
         </div>
@@ -62,7 +62,7 @@ const IndexWarper = ({}: IIndexWarperProps) => {
               className="w-full h-full"
             />
             <Image
-              src="/images/play-circle.svg"
+              src="/images/icons/play-circle.svg"
               alt="play Icon"
               width={80}
               height={80}
