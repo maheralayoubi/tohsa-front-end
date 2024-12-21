@@ -20,14 +20,14 @@
       "title": "Research Project 1",
       "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
       "href": "/",
-      "image": "/images/project1.png"
+      "image": "/images/projects/project1.png"
     },
     {
       "id": "2",
       "title": "Research Project 2 Long Title",
       "content": "GlycoRDF is a standard representation for Glycosmis data (glycan structures, publication information, biological source information, experimental data) in RDF.  ",
       "href": "/",
-      "image": "/images/project2.png"
+      "image": "/images/projects/project2.png"
     }
   ],
   "dataRecourses": [
