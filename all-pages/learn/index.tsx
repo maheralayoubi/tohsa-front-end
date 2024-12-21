@@ -7,7 +7,7 @@ function Index() {
     <main>
       <HeroSection
         title="GLYCO LEARNING"
-        imageSource="/images/learn-hero.png"
+        imageSource="/images/hero/learn-hero.png"
       />
       <IndexWarper />
       <Footer />

@@ -8,12 +8,12 @@
     {
       "id": "2",
       "label": "Discovery",
-      "href": "/discovery"
+      "href": "/"
     },
     {
       "id": "3",
       "label": "Access",
-      "href": "/access"
+      "href": "/"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
     {
       "id": "2",
       "label": "Help",
-      "href": "/help"
+      "href": "/"
     }
   ]
 }

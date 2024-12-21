@@ -1,6 +1,6 @@
 {
   "pageTitle": "CONTACT US",
-  "imagePageSrc": "/images/contactHero.png",
+  "imagePageSrc": "/images/hero/contactHero.png",
   "question": {
     "q1": "Do you have any questions or comments? Send us an ",
     "emailLink": "info@tohsa.com",

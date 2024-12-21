@@ -18,12 +18,12 @@ const FilterMobileNav: React.FC<IFilterMobileNav> = ({ displayFilterNav, setDisp
                 <Image onClick={toggleFilterNav} src='/images/close.svg' className="cursor-pointer" alt="arrow-left" width={24} height={24} />
                 :
                 <Link href={"/"}>
-                    <Image src='/images/arrow-left.svg' alt="arrow-left" width={24} height={24} />
+                    <Image src='/images/icons/arrow-left.svg' alt="arrow-left" width={24} height={24} />
                 </Link>
             }
             <span className="text-base font-bold">{!displayFilterNav ? "Search" : "Filter Your Search"}</span>
             <div className="w-6 h-6 relative">
-                {!displayFilterNav && <Image onClick={toggleFilterNav} src='/images/filter.svg' fill alt="filter" className="cursor-pointer" />}
+                {!displayFilterNav && <Image onClick={toggleFilterNav} src='/images/icons/filter.svg' fill alt="filter" className="cursor-pointer" />}
             </div>
         </div>
     )

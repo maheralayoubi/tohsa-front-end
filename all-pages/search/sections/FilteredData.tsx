@@ -7,7 +7,7 @@ import searchStaticData from "../data/searschStaticData.json"
 import searchData from "../data/search.json"
 
 // components
-import { SearchInput } from "@/global-components/SearchBtn";
+import SearchInput from "@/global-components/SearchInput";
 import CardData from "./components/CardData";
 
 interface FilteredDataP {

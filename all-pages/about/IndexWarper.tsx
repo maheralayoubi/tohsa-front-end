@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import data from "@/DB/about.json";
+import universities from "@/DB/universities.json";
+
 import team from "@/DB/profile.json";
 import Sidebar from "@/global-components/Sidebar";
 import MissionSection from "./sections/MissionSection";
@@ -30,7 +32,7 @@ const IndexWarper = ({ }: IIndexWarperProps) => {
         <TeamSection team={team} description={data.team.description} />
         <PartnersSection
           partners={data.partners}
-          partnerLocations={data.partnerLocations}
+          partnerLocations={universities}
         />
         <FAQsSection faqs={data.faqs} />
       </div>

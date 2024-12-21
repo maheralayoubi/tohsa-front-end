@@ -9,7 +9,7 @@ const Projects = () => {
     <div className="flex flex-wrap 2xl:flex-nowrap px-[20px] lg:px-[64px] py-[40px] lg:py-[128px] 2xl:space-x-[40px] gap-5">
       <div className="relative overflow-hidden max-w-[700px] w-full aspect-square lg:h-[570px] rounded-lg flex">
         <Image
-          src="/images/nn5.png"
+          src="/images/media/nn5.png"
           alt="nn5"
           fill
           className=" w-full h-[265px] lg:h-full object-cover"

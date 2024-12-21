@@ -11,7 +11,7 @@ const SideBarSubItem: React.FC<ISideBarSubItem> = ({ href, label }) => {
         <li className="font-normal text-sm flex items-center space-x-2 w-full cursor-pointer">
             <Link href={href} className="flex space-x-2 items-center w-full">
                 <Image
-                    src="/images/setting.svg"
+                    src="/images/icons/setting.svg"
                     alt="Setting icon"
                     width={32}
                     height={32}

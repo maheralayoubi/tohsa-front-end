@@ -46,7 +46,7 @@ const HistorySection = ({
           <div className="relative rounded-lg overflow-hidden w-[50%] lg:w-[280px] lg:max-h-[50%]">
             <div className="absolute inset-0 flex flex-col justify-center items-center z-10 space-y-2">
               <Image
-                src="/images/gallery.svg"
+                src="/images/icons/gallery.svg"
                 alt="Gallery Icon"
                 width={40}
                 height={40}
