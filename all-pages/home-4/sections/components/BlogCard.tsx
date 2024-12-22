@@ -13,12 +13,11 @@ const BlogCard: React.FC<IBlogCard> = ({ data }) => {
 
     const onLoading = (): void => {
         setLoading(true)
-        console.log("load")
     };
 
     return (
         <div className="p-[8px] lg:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center space-y-2 lg:space-y-5 lg:hover:bg-[#F0F5FF]">
-            <div className={`hexagonImageBorder ${loading && "bg-[#ee7d54]"} h-[280px] w-[324px] lg:group-hover:scale-105 transition-all`}>
+            <div className={`hexagonImageBorder ${loading && "bg-[#ee7d54]"} h-[207px] w-[240px] lg:group-hover:scale-105 transition-all`}>
                 <div className="bg-white hexagonBlur">
                     <div className="relative rounded-[2px] hexagonImage">
                         <Image
@@ -34,7 +33,7 @@ const BlogCard: React.FC<IBlogCard> = ({ data }) => {
 
             </div>
 
-            <h3 className="font-poppins font-bold text-[16px] lg:text-[32px] lg:min-h-[100px]">
+            <h3 className="font-poppins font-bold text-[16px] lg:text-[20px] lg:min-h-[70px]">
                 {data?.title}
             </h3>
             <p className="font-poppins text-[#484848] text-[12px] lg:text-[16px] text-center line-clamp-2 ">

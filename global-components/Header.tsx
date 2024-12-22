@@ -138,7 +138,8 @@ const Header = () => {
                     alt="toggle arrow"
                     width={16}
                     height={16}
-                    className={`transition-transform ${openSections === index ? "-rotate-90" : "rotate-90"
+                    loading={"lazy"}
+                    className={`w-[16px] h-[16px] transition-transform ${openSections === index ? "-rotate-90" : "rotate-90"
                       }`}
                   />
                 </div>

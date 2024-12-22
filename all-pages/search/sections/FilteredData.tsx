@@ -58,7 +58,7 @@ const FilteredData: React.FC<IFilteredData> = ({ searchLengthData, filteredData 
                             filteredData?.research?.map(item =>
                                 <div key={item?.id} className="flex flex-col lg:flex-row items-start justify-center gap-2 lg:gap-5">
                                     <div className="relative w-full aspect-video lg:w-[330px] lg:h-[220px] ">
-                                        <Image src={item?.image} alt={item.title} fill className="rounded-lg object-cover" />
+                                        <Image src={item?.image} alt={item.title} fill sizes="100vw 100vh" className="rounded-lg object-cover" />
                                     </div>
                                     <CardData content={item.content} href={item.href} title={item.title} />
                                 </div>
