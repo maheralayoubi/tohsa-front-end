@@ -14,6 +14,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ image, title }) => {
                     src={image}
                     alt={title}
                     fill
+                    sizes="100vw 100vh"
                     className="rounded object-cover"
                 />
             </div>

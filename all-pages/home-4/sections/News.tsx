@@ -7,12 +7,21 @@ const News = () => {
       <div className="flex justify-between">
         <p>News</p>
         <div className="flex justify-between items-center space-x-[16px]">
-          <Image src="/images/icons/x.svg" alt="x logo" width={24} height={24} />
+          <Image
+            src="/images/icons/x.svg"
+            alt="x logo"
+            width={24}
+            height={24}
+            loading={"lazy"}
+            className="w-[24px] h-[24px]"
+            />
           <Image
             src="/images/icons/youtube.svg"
             alt="youtube logo"
             width={24}
             height={24}
+            loading={"lazy"}
+            className="w-[24px] h-[24px]"
           />
         </div>
       </div>

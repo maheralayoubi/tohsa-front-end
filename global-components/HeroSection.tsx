@@ -13,6 +13,7 @@ const HeroSection = ({ title, imageSource }: IHeroSectionProps) => {
           src={imageSource}
           alt={`${title} Hero`}
           fill
+          priority
           className="object-cover"
         />
         <div className="w-[84px] max-w-[400px] absolute left-[10%] top-[30%]">

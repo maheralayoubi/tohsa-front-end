@@ -50,6 +50,7 @@ const HistorySection = ({
                 alt="Gallery Icon"
                 width={40}
                 height={40}
+                className="w-[40px] h-[40px]"
               />
               <p className="text-white text-[16px]">See all 12 images</p>
             </div>

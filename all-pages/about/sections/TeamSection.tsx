@@ -52,15 +52,15 @@ const TeamSection = ({ team, description }: ITeam) => {
       >
         {team.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-[#F0F5FF] p-4 md:p-6 lg:p-8 rounded-lg lg:rounded-2xl font-poppins flex flex-col items-center">
+            <div className="bg-[#F0F5FF] p-2 md:p-5 rounded-lg lg:rounded-2xl font-poppins flex flex-col items-center">
               {/* Team Member Image */}
-              <div className="w-full h-[200px] md:h-[240px] lg:h-[280px] rounded-md overflow-hidden">
+              <div className="w-full h-[200px] rounded-md overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.userName}
                   width={352}
                   height={280}
-                  className="w-full h-full object-cover"
+                  className="object-cover h-full"
                 />
               </div>
 
