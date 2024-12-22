@@ -1,5 +1,3 @@
-
-
 // components
 import SideBarSubItem from "./components/SideBarSubItem";
 
@@ -12,15 +10,19 @@ interface ISideBarProps {
 
 const SideBar = ({ displaySidebar }: ISideBarProps) => {
   return displaySidebar ? (
-    <div className="sidebar h-full hidden lg:block w-[15%] max-w-[15%] p-[1%] font-poppins sticky top-20">
+    <div className="sidebar h-full hidden lg:block w-[15%] max-w-[15%] p-[1%] font-poppins sticky top-20 overflow-y-auto max-h-[calc(100vh-80px)] no-scrollbar">
       <ul className="pl-[1%] space-y-5">
-        {sidebarData.map(item => (
+        {sidebarData.map((item) => (
           <li key={item.id} className="font-bold text-lg">
             <span className="mb-5 block">{item.title}</span>
             <ul className="w-[151px] space-y-2">
-              {item.items.map(item =>
-                <SideBarSubItem key={item.id} href={item.href} label={item.label} />
-              )}
+              {item.items.map((item) => (
+                <SideBarSubItem
+                  key={item.id}
+                  href={item.href}
+                  label={item.label}
+                />
+              ))}
             </ul>
           </li>
         ))}
@@ -30,4 +32,3 @@ const SideBar = ({ displaySidebar }: ISideBarProps) => {
 };
 
 export default SideBar;
-
