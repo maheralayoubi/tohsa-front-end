@@ -6,7 +6,7 @@ This is a Next.js project for the Tohsa front end application.
 
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-- [How to Modify Page Content](#how-to-modify-page-content)
+- [Modifying Page Content](#modifying-page-content)
 - [All Pages in Website](#all-pages-in-website)
 - [Deploy](#Deployment)
 - [Learn More](#learn-more)
@@ -51,17 +51,17 @@ The project follows a standard Next.js structure with the following main directo
 
 #### app/
 
-- Contains the main pages and components of the application.
-- Every folder represents a route page of this site
+- Houses the core pages and components of the application.
+- Each folder corresponds to a specific route, representing individual pages of the website.
 
 ### all-pages/
 
 - Contains all the source code of the application.
-- Contains several folders where each folder represents a page components and contains :
+- Each folder represents a page with the following structure:
 
-#### 1. index.tsx :
+#### index.tsx :
 
-- This file is the main file of the page and render all page sections .
+- Main file rendering all page sections
 
 #### 2. sections/
 
@@ -70,7 +70,7 @@ The project follows a standard Next.js structure with the following main directo
 
 #### 3. data/
 
-- Contain all static data in json file for page .
+- Stores static JSON data for the page
 
 ### DB/
 
@@ -85,12 +85,18 @@ The project follows a standard Next.js structure with the following main directo
 
 - Static assets such as images and fonts
 
-## How to Modify Page Content
+## Modifying Page Content
 
-if you need to modify page data like blogs data or news data or others , go to DB folder and choose json file that you want to modify it and change contant as you prefer
+To modify page data:
 
-note: you should adhear to the structure of the json data file for not causing problem is the process of get and display data
-note: add the valid src for images that you modify it
+1. Navigate to the `DB` folder in your project directory.
+2. Select the appropriate JSON file corresponding to the data you wish to modify (e.g., blogs, news, etc.).
+3. Edit the content within the file as needed.
+
+Important notes:
+
+- Adhere strictly to the existing JSON structure to avoid complications during data retrieval and display.
+- Ensure that any modified image sources are valid and accessible.
 
 ## All Pages in Website
 

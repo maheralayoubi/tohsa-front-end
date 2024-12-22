@@ -1,4 +1,4 @@
-import React from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,17 +7,22 @@ interface IBlogCard {
 }
 
 const BlogCard: React.FC<IBlogCard> = ({ data }) => {
+
+
     return (
         <div className="p-[8px] lg:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center space-y-2 lg:space-y-5 lg:hover:bg-[#F0F5FF]">
-            <div className="hexagonImageBorder h-[280px] w-[324px] lg:group-hover:scale-105 transition-all">
-                <div className="relative rounded-[2px] hexagonImage">
-                    <Image
-                        src={data?.image}
-                        alt={data?.title}
-                        fill
-                        className="rounded-[2px] w-full h-full object-cover"
-                    />
+            <div className={`hexagonImageBorder bg-[#ee7d54] h-[280px] w-[324px] lg:group-hover:scale-105 transition-all`}>
+                <div className="bg-white hexagonBlur">
+                    <div className="relative rounded-[2px] hexagonImage">
+                        <Image
+                            src={data?.image}
+                            alt={data?.title}
+                            fill
+                            className="rounded-[2px] w-full h-full object-cover"
+                        />
+                    </div>
                 </div>
+
             </div>
 
             <h3 className="font-poppins font-bold text-[16px] lg:text-[32px] lg:min-h-[100px]">
