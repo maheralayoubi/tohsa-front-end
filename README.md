@@ -6,7 +6,9 @@ This is a Next.js project for the Tohsa front end application.
 
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
-- [Deploy](#deploy)
+- [How to Modify Page Content](#how-to-modify-page-content)
+- [All Pages in Website](#all-pages-in-website)
+- [Deploy](#Deployment)
 - [Learn More](#learn-more)
 
 ## Getting Started
@@ -49,24 +51,66 @@ The project follows a standard Next.js structure with the following main directo
 
 #### app/
 
-Contains the main pages and components of the application.
+- Contains the main pages and components of the application.
+- Every folder represents a route page of this site
 
 ### all-pages/
 
-Contains all the source code of the application.
+- Contains all the source code of the application.
+- Contains several folders where each folder represents a page components and contains :
+
+#### 1. index.tsx :
+
+- This file is the main file of the page and render all page sections .
+
+#### 2. sections/
+
+- This folder for all sections components of the page.
+- Contain components folder that contain some components that used in sections for the same page
+
+#### 3. data/
+
+- Contain all static data in json file for page .
 
 ### DB/
 
 - Contains the dynamic data of the application.
-- Each json file contain dummy data
+- Each json file contain dummy data for some pages .
 
-#### global-components/
+### global-components/
 
-Reusable UI components.
+- Contains reusable UI components from many pages .
 
 ### public/
 
-Static assets such as images and fonts
+- Static assets such as images and fonts
+
+## How to Modify Page Content
+
+if you need to modify page data like blogs data or news data or others , go to DB folder and choose json file that you want to modify it and change contant as you prefer
+
+note: you should adhear to the structure of the json data file for not causing problem is the process of get and display data
+note: add the valid src for images that you modify it
+
+## All Pages in Website
+
+- /
+- /about
+- /contact-us
+- /content/:id (like /content/1 /content/2 ...)
+- /home-1
+- /home-2
+- /home-3
+- /home-4 (the same of /)
+- /learn
+- /news
+- /news/:id (like /news/1 /news/2 ...)
+- /ontologies
+- /privacy-policy
+- /profile/:id (like /profile/1 /profile/2 ...)
+- /projects
+- /projects/:id (like /projects/1 /projects/2 ...)
+- /search
 
 ## Deployment
 
@@ -105,3 +149,5 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+an INDEX file, and the sections and folder for fixed data. The index file .
