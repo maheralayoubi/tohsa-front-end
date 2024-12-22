@@ -15,6 +15,7 @@ const BlogCard: React.FC<IBlogCard> = ({ data }) => {
                         src={data?.image}
                         alt={data?.title}
                         fill
+                        sizes="100vw 100vh"
                         className="rounded-[2px] w-full h-full object-cover"
                     />
                 </div>

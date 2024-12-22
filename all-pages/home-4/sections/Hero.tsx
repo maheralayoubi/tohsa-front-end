@@ -11,6 +11,7 @@ const Hero = () => {
           src="/images/hero/background-hero-2.png"
           alt="hero photo"
           fill
+          priority
           className="object-cover"
         />
       </div>

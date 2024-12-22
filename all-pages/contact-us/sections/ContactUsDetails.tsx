@@ -43,7 +43,7 @@ const ContactUsDetails: React.FC = () => {
                 </p>
                 <div className="flex items-center justify-start gap-5">
                     <Link href={contactStaticData?.contactSns?.twitter}>
-                        <Image src="/images/icons/x.svg" alt="x" width={24} height={24} />
+                        <Image src="/images/icons/x.svg" alt="x" width={24} height={24} className="w-[24px] h-[24px]"/>
                     </Link>
                     <Link href={contactStaticData?.contactSns?.youtube}>
                         <Image src="/images/icons/youtube.svg" alt="youtube" width={24} height={24} />
