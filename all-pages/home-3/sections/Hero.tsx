@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="relative md:pt-0 w-full h-full  ">
         <Image
-          src="/images/background-hero-2.png"
+          src="/images/hero/background-hero-2.png"
           alt="hero photo"
           fill
           className="object-cover"

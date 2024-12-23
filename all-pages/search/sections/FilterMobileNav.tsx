@@ -15,7 +15,7 @@ const FilterMobileNav: React.FC<IFilterMobileNav> = ({ displayFilterNav, setDisp
     return (
         <div className="w-full flex lg:hidden items-center justify-between h-14 border-b border-b-[#BBBBBB] px-4 sticky top-14 bg-white z-30">
             {displayFilterNav ?
-                <Image onClick={toggleFilterNav} src='/images/close.svg' className="cursor-pointer" alt="arrow-left" width={24} height={24} />
+                <Image onClick={toggleFilterNav} src='/images/icons/close.svg' className="cursor-pointer" alt="arrow-left" width={24} height={24} />
                 :
                 <Link href={"/"}>
                     <Image src='/images/icons/arrow-left.svg' alt="arrow-left" width={24} height={24} />

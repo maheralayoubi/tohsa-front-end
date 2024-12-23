@@ -16,7 +16,7 @@ const AboutProject: React.FC<IAboutProject> = ({ data }) => {
       )}
       <div className="flex items-start justify-between gap-10 flex-col lg:flex-row">
         <div className="relative lg:h-[400px] w-full lg:w-[400px] aspect-square">
-          <Image className="object-cover rounded" src={data?.subImage} alt={data?.subTitle} fill />
+          <Image className="object-cover rounded" src={data?.subImage} alt={data?.subTitle} fill sizes="100vw 100vh" />
         </div>
         <div className="flex-1 space-y-5">
           <h2 className="text-base lg:text-3xl font-bold">{pageStaticData.subtitle}</h2>

@@ -24,6 +24,8 @@ export const MobileNavItem: React.FC<IMobileNavItem> = ({
           alt="arrow right"
           width={16}
           height={16}
+          loading={"lazy"}
+          className="w-[16px] h-[16px]"
         />
       </Link>
     </li>
