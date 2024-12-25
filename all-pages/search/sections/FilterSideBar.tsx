@@ -144,7 +144,7 @@ const FilterSideBar: React.FC<IFilterSideBar> = ({ displayFilterNav, setFiltered
     }, [checkedTypes, setFilteredData, setSearchLengthData]);
 
     return (
-        <section className={`${!displayFilterNav && "hidden"} lg:block h-screen  lg:h-full fixed lg:sticky top-28 lg:top-20 w-full z-30 lg:w-[300px] p-5 space-y-5 text-sm font-normal bg-white`}>
+        <section className={`${!displayFilterNav && "hidden"} lg:block h-screen overflow-y-auto max-h-[calc(100vh-80px)] no-scrollbar  lg:h-full fixed lg:sticky top-28 lg:top-20 w-full z-30 lg:w-[300px] p-5 space-y-5 text-sm font-normal bg-white`}>
             {/* By Type */}
             <div className="space-y-5 p-5">
                 <h3 className="text-xl font-bold">{searchStaticData.byType}</h3>
