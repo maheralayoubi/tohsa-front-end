@@ -12,7 +12,7 @@ const ProfileDetails: React.FC<IProfileDetails> = ({ data }) => {
 
             <div className="flex items-start justify-center gap-2 lg:gap-10 flex-col lg:flex-row">
                 <div className="relative lg:w-[400px] lg:h-[400px] w-full aspect-square">
-                    <Image src={data?.image} alt={data?.userName} fill className=" object-cover" />
+                    <Image src={data?.image} alt={data?.userName} fill className=" object-cover rounded-lg lg:rounded" />
                 </div>
                 <div className="flex-1 lg:space-y-5 space-y-2">
                     <h1 className="text-xl lg:text-[40px] font-bold">{data?.userName}</h1>

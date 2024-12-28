@@ -25,7 +25,7 @@ import { Navigation, Mousewheel, Keyboard } from "swiper/modules";
 
 const Projects = () => {
   return (
-    <section className="relative text-base lg:text-base font-normal px-5 xl:px-16 py-10 space-y-10">
+    <section className="relative text-base lg:text-base font-normal px-5 2xl:px-16 py-10 space-y-10">
       <Image src="/images/media/hexagonBg.png" unoptimized alt="hexagon" fill className=" object-cover absolute -z-20" sizes="100vw 100vh" />
       <div className="absolute top-0 left-0 flex w-full h-full -z-20 overflow-hidden">
       </div>
@@ -42,9 +42,9 @@ const Projects = () => {
         spaceBetween={20}
         slidesPerView={1}
         breakpoints={{
-          1024: {
-            slidesPerView: 2,
-            spaceBetween: 40,
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 20,
           },
           1500: {
             slidesPerView: 3,
