@@ -7,7 +7,7 @@ interface IContentHero {
 
 const ContentHero: React.FC<IContentHero> = ({ data }) => {
     return (
-        <section className="relative flex items-end justify-center h-[600px] lg:h-[920px]">
+        <section className="relative flex items-end justify-center lg:h-[calc(100vh-56px)] h-[600px] lg:min-h-[668px] min-h-[330px]">
             <div className=" absolute top-0 left-0 h-full w-full">
                 <Image className=" object-cover" src={data?.image} alt={data?.title} fill />
             </div>

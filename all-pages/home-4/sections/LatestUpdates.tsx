@@ -31,7 +31,7 @@ const LatestUpdates = () => {
         spaceBetween={20}
         slidesPerView={1}
         breakpoints={{
-          1500: {
+          1280: {
             slidesPerView: 2,
             spaceBetween: 40,
           },

@@ -16,8 +16,8 @@ const BlogCard: React.FC<IBlogCard> = ({ data }) => {
     };
 
     return (
-        <div className="p-[8px] lg:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center space-y-2 lg:space-y-5 lg:hover:bg-[#F0F5FF]">
-            <div className={`hexagonImageBorder ${loading && "bg-[#ee7d54]"} h-[207px] w-[240px] lg:group-hover:scale-105 transition-all`}>
+        <div className="p-[8px] 2xl:p-[40px] rounded-[8px] group z-10 flex items-center flex-col text-center space-y-2 lg:space-y-5 lg:hover:bg-[#F0F5FF]">
+            <div className={`hexagonImageBorder ${loading && "bg-[#ee7d54]"} h-[205px] w-[240px] sm:h-[125px] sm:w-[145px] 2xl:h-[207px] 2xl:w-[240px] lg:group-hover:scale-105 transition-all`}>
                 <div className="bg-white hexagonBlur">
                     <div className="relative rounded-[2px] hexagonImage">
                         <Image
@@ -33,10 +33,10 @@ const BlogCard: React.FC<IBlogCard> = ({ data }) => {
 
             </div>
 
-            <h3 className="font-poppins font-bold text-[16px] lg:text-[20px] lg:min-h-[70px]">
+            <h3 className="font-poppins font-bold text-[16px] 2xl:text-[20px] min-h-[50px]  2xl:min-h-[60px]  line-clamp-2">
                 {data?.title}
             </h3>
-            <p className="font-poppins text-[#484848] text-[12px] lg:text-[16px] text-center line-clamp-2 ">
+            <p className="font-poppins text-[#484848] text-[12px] 2xl:text-[16px] text-center line-clamp-2 ">
                 {data?.content}
             </p>
             <Link href={`/content/${data?.id}`} className="flex items-center lg:opacity-0 transition-all lg:group-hover:opacity-100">

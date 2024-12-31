@@ -13,7 +13,8 @@ const ProfileHero: React.FC<IProfileHero> = ({ image, title }) => {
             <div className=" absolute top-0 left-0 h-full w-full">
                 <Image className="object-cover" src={image} alt={title} fill />
             </div>
-            <h2 className="font-bold text-xl lg:text-[80px] z-10 text-white">{title}</h2>
+            <div className="absolute top-0 left-0 h-full w-full z-10 darkGradiant"></div>
+            <h2 className="font-bold text-xl lg:text-[80px] z-20 text-white">{title}</h2>
         </section>
     )
 };

@@ -43,7 +43,7 @@ const ContactUsDetails: React.FC = () => {
                 </p>
                 <div className="flex items-center justify-start gap-5">
                     <Link href={contactStaticData?.contactSns?.twitter}>
-                        <Image src="/images/icons/x.svg" alt="x" width={24} height={24} className="w-[24px] h-[24px]"/>
+                        <Image src="/images/icons/x.svg" alt="x" width={24} height={24} className="w-[24px] h-[24px]" />
                     </Link>
                     <Link href={contactStaticData?.contactSns?.youtube}>
                         <Image src="/images/icons/youtube.svg" alt="youtube" width={24} height={24} />
@@ -55,9 +55,9 @@ const ContactUsDetails: React.FC = () => {
                 <Hexagons title={contactStaticData.hexagon.title} tohsa={contactStaticData.hexagon.tohsa} />
                 <div className="w-full text-base">
                     <label className="block text-[#878787] text-sm">{contactStaticData?.input?.label}</label>
-                    <div className="flex items-center justify-start gap-5">
-                        <input type="text" className="border border-[#878787] text-sm outline-none rounded-sm flex-1 p-3" placeholder={contactStaticData?.input?.plaseholder} />
-                        <button className="bg-[#57369E] py-3 px-8 text-white hover:bg-[#00A7D3]">{contactStaticData?.input?.submitBtn}</button>
+                    <div className="flex items-center justify-start gap-2 lg:gap-5">
+                        <input type="text" className="border border-[#878787] text-sm outline-none rounded-sm flex-1 p-2 lg:p-3 h-10 lg:h-fit" placeholder={contactStaticData?.input?.plaseholder} />
+                        <button className="bg-[#57369E] py-2 rounded-sm border-none outline-none px-4 lg:py-3 lg:px-8 text-white hover:bg-[#00A7D3]">{contactStaticData?.input?.submitBtn}</button>
                     </div>
                 </div>
                 <p className="text-center">{contactStaticData?.input?.description}</p>

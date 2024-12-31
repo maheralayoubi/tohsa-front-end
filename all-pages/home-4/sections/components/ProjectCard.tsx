@@ -9,7 +9,7 @@ interface IProjectCard {
 const ProjectCard: React.FC<IProjectCard> = ({ image, title }) => {
     return (
         <div className="p-2 lg:p-5 space-y-5 shadow-xl bg-white rounded">
-            <div className="relative w-full h-[180px] lg:h-[274px]">
+            <div className="relative w-full h-[180px] sm:h-[120px] 2xl:h-[274px]">
                 <Image
                     src={image}
                     alt={title}
@@ -18,7 +18,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ image, title }) => {
                     className="rounded object-cover"
                 />
             </div>
-            <h2 className="font-poppins text-[14px] lg:text-[20px] font-bold text-left flex items-start flex-1 group-hover:text-white h-12">
+            <h2 className="font-poppins text-[14px] sm:text-base 2xl:text-[20px] font-bold text-left flex items-start flex-1 group-hover:text-white h-12">
                 <span className="line-clamp-2">{title}</span>
             </h2>
 
