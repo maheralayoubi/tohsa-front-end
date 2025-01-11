@@ -19,7 +19,7 @@ const HistorySection = ({
   current,
 }: IHistorySectionProps) => {
   return (
-    <div className="space-y-2 lg:space-y-10" id="history">
+    <div className="space-y-5 lg:space-y-10" id="history">
       <Paragraph title={`History \n Our Journey: The Evolution of HGA-TOHSA`} />
       <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-5">
         {/* Main Image */}
