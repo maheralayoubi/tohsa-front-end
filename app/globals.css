@@ -167,8 +167,8 @@ table {
     padding-right: 0px !important;
   }
 
-  .mySwiper2 .swiper-button-next,
-  .mySwiper2 .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     display: none !important;
   }
 }
