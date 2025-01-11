@@ -23,7 +23,6 @@
   font-style: normal;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -118,6 +117,12 @@ table {
 .swiper-button-next,
 .swiper-button-prev {
   color: #57369e !important;
+  z-index: 11 !important;
+}
+
+.right-overlay,
+.left-overlay {
+  display: block !important;
 }
 
 @media screen and (max-width: 1280px) {
@@ -130,6 +135,11 @@ table {
   .swiper-button-prev {
     display: none !important;
   }
+
+  .right-overlay,
+  .left-overlay {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -138,7 +148,6 @@ table {
     padding-right: 100px !important;
   }
 }
-
 
 .mySwiper2 .swiper-button-next,
 .mySwiper2 .swiper-button-prev {
@@ -151,9 +160,11 @@ table {
   opacity: 0.8px;
   border-radius: 50%;
   transform: translate(-30%, 30%);
-  background: radial-gradient(50% 50% at 50% 50%,
-      #efcdf9 0%,
-      rgba(239, 205, 249, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #efcdf9 0%,
+    rgba(239, 205, 249, 0) 100%
+  );
 }
 
 .blur2 {
@@ -162,9 +173,11 @@ table {
   opacity: 0.8px;
   border-radius: 50%;
   transform: translate(30%, 30%);
-  background: radial-gradient(50% 50% at 50% 50%,
-      #bccff1 0%,
-      rgba(188, 207, 241, 0) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #bccff1 0%,
+    rgba(188, 207, 241, 0) 100%
+  );
 }
 
 /* HTML: <div class="hexagon"></div> */
@@ -186,5 +199,9 @@ table {
 }
 
 .darkGradiant {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
 }

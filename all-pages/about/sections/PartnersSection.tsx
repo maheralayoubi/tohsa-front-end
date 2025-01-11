@@ -9,7 +9,12 @@ import { useState } from "react";
 
 interface IPartnersSectionProps {
   partners: string;
-  partnerLocations: { id: number; name: string; iframeSrc: string, imageSrc: string }[];
+  partnerLocations: {
+    id: number;
+    name: string;
+    iframeSrc: string;
+    imageSrc: string;
+  }[];
 }
 
 const PartnersSection = ({
@@ -25,37 +30,44 @@ const PartnersSection = ({
       {/* Section Title */}
       <Paragraph title="Partners & Collaborators" content={partners} />
 
-      {/* Swiper Component */}
-      <Swiper
-        spaceBetween={20} // Default spacing
-        breakpoints={{
-          640: { slidesPerView: 1, spaceBetween: 20 }, // Small screens
-          768: { slidesPerView: 2, spaceBetween: 20 }, // Tablets
-          1024: { slidesPerView: 3, spaceBetween: 30 }, // Medium screens
-          1280: { slidesPerView: 4, spaceBetween: 40 }, // Large screens
-        }}
-        navigation
-        mousewheel
-        keyboard
-        modules={[Navigation, Mousewheel, Keyboard]}
-        className="mySwiper mt-2 lg:mt-[40px]"
-      >
-        {partnerLocations.map((partner) => (
-          <SwiperSlide
-            key={partner.id}
-            className="flex justify-center items-center cursor-pointer"
-            onClick={() => setSelectedLocation(partner.iframeSrc)} // Update iframe on click
-          >
-            <Image
-              src={partner.imageSrc}
-              alt={partner.name}
-              height={60}
-              width={240}
-              className="object-contain max-h-[60px] lg:max-h-[120px] w-auto"
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {/* Swiper Wrapper with Overlays */}
+      <div className="relative mt-2 lg:mt-[40px]">
+        {/* Swiper Component */}
+        <Swiper
+          spaceBetween={20}
+          breakpoints={{
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1024: { slidesPerView: 3, spaceBetween: 30 },
+            1280: { slidesPerView: 4, spaceBetween: 40 },
+          }}
+          navigation
+          mousewheel
+          keyboard
+          modules={[Navigation, Mousewheel, Keyboard]}
+          className="mySwiper mt-2 lg:mt-[40px]"
+        >
+          {/* Left Overlay */}
+          <div className="absolute left-0 top-0 bottom-0 w-10 bg-white z-10 hidden left-overlay"></div>
+          {partnerLocations.map((partner) => (
+            <SwiperSlide
+              key={partner.id}
+              className="flex justify-center items-center cursor-pointer"
+              onClick={() => setSelectedLocation(partner.iframeSrc)} // Update iframe on click
+            >
+              <Image
+                src={partner.imageSrc}
+                alt={partner.name}
+                height={60}
+                width={240}
+                className="object-contain max-h-[60px] lg:max-h-[120px] w-auto"
+              />
+            </SwiperSlide>
+          ))}
+          {/* Right Overlay */}
+          <div className="absolute right-0 top-0 bottom-0 w-10 bg-white z-10 hidden left-overlay"></div>
+        </Swiper>
+      </div>
 
       {/* Google Map Iframe */}
       <div className="w-[100%] h-[300px] lg:h-[460px] mt-2 lg:mt-[40px]">
