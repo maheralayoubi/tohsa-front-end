@@ -95,11 +95,9 @@ table {
 }
 
 /* Slider styles */
-.mySwiper {
-  padding: 0px 60px !important;
-}
-
-.mySwiper2 {
+.mySwiper,
+.mySwiper2,
+.mySwiper3 {
   padding: 0px 60px !important;
 }
 
@@ -110,6 +108,10 @@ table {
 
 .swiper-slide {
   width: 50%;
+}
+
+.mySwiper3 .swiper-slide {
+  width: fit-content;
 }
 
 .swiper-wrapper {
@@ -124,7 +126,9 @@ table {
 }
 
 .mySwiper2 .swiper-button-next,
-.mySwiper2 .swiper-button-prev {
+.mySwiper2 .swiper-button-prev,
+.mySwiper3 .swiper-button-next,
+.mySwiper3 .swiper-button-prev {
   display: block !important; /* Ensures buttons are visible */
 }
 
@@ -140,13 +144,16 @@ table {
     padding-right: 100px !important;
   }
 
-  .mySwiper2 {
+  .mySwiper2,
+  .mySwiper3 {
     padding: 0px 0px !important;
     padding-right: 0px !important;
   }
 
   .mySwiper2 .swiper-button-next,
-  .mySwiper2 .swiper-button-prev {
+  .mySwiper2 .swiper-button-prev,
+  .mySwiper3 .swiper-button-next,
+  .mySwiper3 .swiper-button-prev {
     display: none !important;
   }
 

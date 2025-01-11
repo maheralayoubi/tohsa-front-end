@@ -37,24 +37,28 @@ const TeamSection = ({ team, description }: ITeam) => {
 
       {/* Swiper Section */}
       <Swiper
-        spaceBetween={16}
+        spaceBetween={8}
         slidesPerView={1.2} // Default for small screens
         breakpoints={{
-          768: { slidesPerView: 1.5 },
-          1024: { slidesPerView: 1.95 },
+          320: { slidesPerView: 1.3, spaceBetween: 8 },
+          640: { slidesPerView: 2, spaceBetween: 16 },
+          768: { slidesPerView: 2, spaceBetween: 16 },
+          1024: { slidesPerView: 2, spaceBetween: 20 },
           1500: { slidesPerView: 2, spaceBetween: 40 },
         }}
         navigation
         mousewheel
         keyboard
         modules={[Navigation, Mousewheel, Keyboard]}
-        className="mySwiper mt-8 lg:mt-16"
+        className="mySwiper3 mt-8 lg:mt-16"
       >
+        {/* Left Overlay */}
+        <div className="absolute left-0 top-0 bottom-0 w-10 bg-white z-10 hidden left-overlay"></div>
         {team.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="bg-[#F0F5FF] p-2 md:p-5 rounded-lg lg:rounded-2xl font-poppins flex flex-col items-center">
+            <div className="bg-[#F0F5FF] p-2 md:p-5 rounded-lg lg:rounded-2xl font-poppins flex flex-col items-center w-auto">
               {/* Team Member Image */}
-              <div className="w-full h-[200px] rounded-md overflow-hidden">
+              <div className="w-fit h-[200px] rounded-md overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.userName}
@@ -81,6 +85,8 @@ const TeamSection = ({ team, description }: ITeam) => {
             </div>
           </SwiperSlide>
         ))}
+        {/* Right Overlay */}
+        <div className="absolute right-0 top-0 bottom-0 w-10 bg-white z-10 hidden left-overlay"></div>
       </Swiper>
     </div>
   );
