@@ -34,18 +34,18 @@ const PartnersSection = ({
       <div className="relative mt-2 lg:mt-[40px]">
         {/* Swiper Component */}
         <Swiper
-          spaceBetween={20}
+          spaceBetween={5}
           breakpoints={{
-            640: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 20 },
-            1024: { slidesPerView: 3, spaceBetween: 30 },
-            1280: { slidesPerView: 4, spaceBetween: 40 },
+            320: { slidesPerView: 2, spaceBetween: 10 },
+            640: { slidesPerView: 2, spaceBetween: 15 },
+            768: { slidesPerView: 3, spaceBetween: 20 },
+            1024: { slidesPerView: 4, spaceBetween: 30 },
           }}
           navigation
           mousewheel
           keyboard
           modules={[Navigation, Mousewheel, Keyboard]}
-          className="mySwiper mt-2 lg:mt-[40px]"
+          className="mySwiper2 mt-2 lg:mt-[40px]" // Changed to mySwiper2
         >
           {/* Left Overlay */}
           <div className="absolute left-0 top-0 bottom-0 w-10 bg-white z-10 hidden left-overlay"></div>
@@ -61,6 +61,7 @@ const PartnersSection = ({
                 height={60}
                 width={240}
                 className="object-contain max-h-[60px] lg:max-h-[120px] w-auto"
+                style={{ maxWidth: "100%", height: "auto" }}
               />
             </SwiperSlide>
           ))}
