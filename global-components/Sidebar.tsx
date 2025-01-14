@@ -57,7 +57,7 @@ const Sidebar = ({ links }: ISidebarProps) => {
   };
 
   return (
-    <div className="sidebar hidden lg:block lg:w-[30%] px-5 lg:px-[20px] py-[80px] sticky top-20 self-start container text-nowrap">
+    <div className="sidebar hidden xl:block xl:w-[300px] px-5 xl:px-[20px] py-[80px] sticky top-20 self-start container text-nowrap">
       <ul className="space-y-5 mt-5">
         {links.map((link, index) => {
           const id = link.toLowerCase().split(" ").join("-");
@@ -65,11 +65,10 @@ const Sidebar = ({ links }: ISidebarProps) => {
             <li key={index}>
               <button
                 onClick={() => handleScroll(id)}
-                className={`${
-                  activeSection === id
-                    ? "underline-offset-8 underline decoration-2 decoration-[#57369E] font-bold text-xl"
-                    : "font-normal text-black text-xl"
-                }`}
+                className={`${activeSection === id
+                  ? "underline-offset-8 underline decoration-2 decoration-[#57369E] font-bold text-xl"
+                  : "font-normal text-black text-xl"
+                  }`}
               >
                 {link}
               </button>

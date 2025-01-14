@@ -104,6 +104,7 @@ table {
 .mySwiper2 .swiper-button-prev {
   display: none !important;
 }
+
 .swiper {
   width: 100%;
   height: 100%;
@@ -133,11 +134,8 @@ table {
   color: #57369e !important;
   z-index: 11 !important;
   height: 100% !important;
-  width: 40px;
+  width: 60px;
   top: 22px;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
 
   background-color: white;
   opacity: 1 !important;
@@ -146,13 +144,15 @@ table {
 .mySwiper .swiper-button-next {
   right: 0 !important;
 }
+
 .mySwiper .swiper-button-prev {
   left: 0 !important;
 }
 
 .mySwiper3 .swiper-button-next,
 .mySwiper3 .swiper-button-prev {
-  display: block !important; /* Ensures buttons are visible */
+  display: block !important;
+  /* Ensures buttons are visible */
 }
 
 .right-overlay,
@@ -165,10 +165,11 @@ table {
     padding-right: 200px !important;
   }
 }
+
 /* MySwiper2 media query */
 @media screen and (max-width: 1280px) {
   .mySwiper {
-    /* padding: 0px 0px !important; */
+    padding: 0px 60px !important;
     padding-right: 200px !important;
   }
 
@@ -226,9 +227,7 @@ table {
 }
 
 .darkGradiant {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 100%);
 }
